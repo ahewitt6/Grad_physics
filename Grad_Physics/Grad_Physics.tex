@@ -1,0 +1,1707 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{enumerate,amsmath,amssymb,amsthm,mathtools,comment}
+
+\usepackage{arydshln}
+\usepackage{dashrule}
+\usepackage{slashed}
+\usepackage{mathrsfs}
+%for Griffiths curly r
+\usepackage{calligra}
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\newcommand{\scripty}[1]{\ensuremath{\mathcalligra{#1}}}
+
+
+
+\newcommand{\capk}{\frac{1}{4 \pi \epsilon_0}}
+
+\begin{document}
+\title{}
+\author{Alec Hewitt}
+\maketitle
+
+\setlength{\parindent}{0mm}
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+\begin{center}
+These are the derivations that I have been transferring to a Latex document and I plan to add as many as possible  throughout my gap year and review them along the way.
+\end{center}
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+
+
+\section*{Quantum Mechanics (Sakurai)}
+
+
+$| S_y; \pm \rangle = \frac{1}{ \sqrt{2}} | S_z; + \rangle \pm  \frac{i}{\sqrt{2}} | S_z; - \rangle\\
+| S_x; \pm \rangle = \frac{1}{ \sqrt{2}} | S_z; + \rangle \pm \frac{1}{\sqrt{2}} | S_z; - \rangle\\
+S_z. |S _z; \pm \rangle = \pm \frac{\hbar}{2} | S_z; \pm \rangle\\$
+nothing special about z direction\\
+\underline{Note:} $S_x | S_x ; \pm \rangle = \pm \frac{\hbar}{2} | S_x; \pm \rangle$ for example\\
+\underline{Note:} $|S_z; + \rangle = | + \rangle;\,\, |S_z; - \rangle = | - \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+\begin{enumerate}
+\setcounter{enumi}{784}
+
+\item \underline{$X = \sum_{a''} \sum_{a'} | a'' \rangle \langle a'' | X | a' \rangle \langle a' |$}\\
+\underline{recall:} $1= \sum_{a'} | a' \rangle \langle a'| (completeness)\\
+X= ( \sum_{a''} | a'' \rangle \langle a''| ) X ( \sum_{a'} | a' \rangle \langle a'|)\\
+= \sum_{a''} \sum_{a'} ( | a'' \rangle \langle a''|) X( | a' \rangle \langle a' |)\\
+= \sum_{a'' a'} ( | a'' \rangle \langle a'' | ) ( X | a' \rangle ) ( \langle a' |)\\
+= \sum_{a'' a'} | a'' \rangle \langle a'' | X | a' \rangle \langle a' |\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $S_+ \equiv \hbar | + \rangle \langle - |;\,\, S_- \equiv \hbar | - \rangle \langle + |\\
+S_+ turns | - \rangle into | + \rangle and | + \rangle \rightarrow 0,\,\,$ etc.\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} these objects can also be written in matrix notation, in $z$ basis\\
+$| + \rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix},\,\, | - \rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\\
+S_z \dot{=} \frac{\hbar}{2} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix};\,\, S_+ \dot{=} \hbar \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix};\,\, S_- \dot{=} \hbar \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}\\
+\dot{=} \sim$ means "represented by"\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\langle A \rangle = \sum_{a'} a' | \langle a' | \alpha \rangle |^2$}\\
+$\langle A \rangle = \langle \alpha | A | \alpha \rangle = \langle \alpha | ( \sum_{a''} | a'' \rangle \langle a'' | ) A (\sum_{a'} | a' \rangle \langle a'| ) | \alpha \rangle\\
+= \sum_{a' a''} \langle \alpha | a'' \rangle \langle a'' | A | a' \rangle \langle a' | \alpha \rangle\\
+= \sum_{a' a''} \langle \alpha | a'' \rangle a' \eta_{a'' a'} \langle a' | \alpha \rangle\\
+= \sum_{a'} a' \langle \alpha | a' \rangle \langle a' | \alpha \rangle\\
+= \sum_{a'} a' | \langle a' | \alpha \rangle |^2\\$
+\underline{Note:} $\langle a' | \alpha \rangle = \langle \alpha | a' \rangle ^*\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$\Lambda_{a'} | \alpha \rangle = | a' \rangle \langle a' | \alpha \rangle$ (Projection operator)\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$S_x = \frac{\hbar}{2} [ | + \rangle \langle - | ) + ( | - \rangle \langle + |)$}\\
+$z$ not special\\
+$\implies S_x = \frac{\hbar}{2} [ ( | S_x; + \rangle \langle S_x' + | - ( | S_x; - \rangle \langle S_x; -1 |]\\$
+insert $| S_x; \pm \rangle = \frac{1}{\sqrt{2}} | + \rangle \pm \frac{1}{\sqrt{2}} | - \rangle\\
+\implies S_x = \frac{\hbar}{2} [ ( | + \rangle \langle - | ) + ( | - \rangle \langle + |)]$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$S_y= \frac{\hbar}{2} [ -i ( | + \rangle \langle - |) + i (| - \rangle \langle + |) $}\\
+$y$ ain't special\\
+$S_y = \frac{\hbar}{2} [ ( | S_y ; + \rangle \langle S_y; +|) - ( |S_y; - \rangle \langle S_y; - |)]\\$
+\underline{recall:} $| S_y; \pm \rangle = \frac{1}{\sqrt{2}} | + \rangle \pm \frac{i}{\sqrt{2}} | - \rangle\\$
+insert\\
+$\implies S_y = \frac{\hbar}{2} [ -i (|+ \rangle \langle - | ) + i ( | - \rangle \langle |)]$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $\vec{S} = ( S_x, S_y, S_z)$ can be measured along any direction with $\vec{S} \cdot \hat{n} = ( S_x, S_y, S_z) \cdot ( n_x, n_y, n_z) \\$
+$| \langle + | \alpha \rangle |^3 \sim$ probability $| \alpha \rangle$ will be in $| + \rangle$ state\\
+$\Delta S_x = S_x - \langle S_x \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\rangle ( \Delta S_x)^2 \rangle = \langle S_x^2 \rangle - \langle S_x \rangle^2$}\\
+$\langle ( \Delta S_x )^2 \rangle = \langle ( S_x - \langle S_x \rangle )^2 \rangle = \langle S_x^2 - 2 S_x \langle S_x \rangle + \langle S_x \rangle^2 \rangle\\
+= \langle S_x^2 \rangle - 2 \langle S_x \rangle^2 + \langle S_x \rangle^2 = \langle S_x^2 \rangle - \langle S_x \rangle^2\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$[S_i, S_j] = i \hbar \epsilon_{ijk} S_k$}\\
+$[S_x, S_y ] = S_x S_y - S_y S_x\\
+\frac{\hbar^2}{4} i [ \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} - \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 0 & 1 \\ 1& 0 \end{pmatrix} ]\\
+=\frac{\hbar^2}{4} i [ \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} + \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} ]\\
+= \frac{2 \hbar^2}{4} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = i \hbar \frac{\hbar}{2} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\\
+= i \hbar S_z = i \hbar \epsilon_{xyz} S_z\\$
+now $x \rightarrow y,\,\, y \rightarrow z,\,\, z \rightarrow x\\
+\implies [S_y, S_z] = i \hbar \epsilon_{yzx} S_x\\$
+so on so forth, by cyclic permutations\\
+$[S_i, S_j] = i \hbar \epsilon_{ijk} S_k\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$\{ S_i, S_j \} = \frac{\hbar^2}{2} \delta_{ij}\\$
+\underline{Note:} degenerate eigen functions are in general not orthogonal\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$B= U A U^{-1} A( diagonal ) U \sim$ unitary\\
+$U$ has columns that are eigenvectors of $B, A$ has eigenvalues, i.e., $U \sim ( \vec{v}_1, \vec{v}_2, \dots )\\
+A \sim \begin{pmatrix} \lambda_1 & \dots & 0 \\ \vdots & \lambda_i & \vdots \\ 0 & \dots & \lambda_n \end{pmatrix}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $det(e^A) = e^{tr A}$\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$[x, F(p_x)] = \frac{\partial F}{\partial p_x}$}\\
+\underline{recall:} $[ f, g] = \sum_{i=1}^N ( \frac{\partial f}{\partial q_i} \frac{\partial g}{\partial p_i} - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial q_i})\\
+\implies [x, F(p_x)] = \frac{\partial x}{\partial x} \frac{\partial F}{\partial p_x} - \frac{\partial F}{\partial x} \frac{\partial x}{\partial p} = \frac{\partial F}{\partial p_x}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} with commutators to get to quantum just insert $i \hbar, i.e., [ x, F(p_x)] = i \hbar \frac{\partial F}{\partial p_x}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$[x_i, p_j] = i \hbar \delta_{ij}$}\\
+$[x, p_x] f = ( x p_x - p_x x) f\\
+=- i \hbar ( x \frac{\partial f}{\partial x} - \frac{\partial}{\partial x} ( x f)) = - i \hbar ( x \frac{\partial f}{\partial x} - f - x \frac{\partial f}{\partial x})\\
+= i \hbar\\
+\implies [ x_i, p_j] = i \hbar \delta_{ij}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$[x_i, G( \hat{\vec{p}})] = i \hbar \frac{\partial G}{\partial p_i}$} (quantum)\\
+assume WLOG $G( \hat{\vec{p}}) = \sum_{n m \ell} a_{n m \ell} p_i^n p_j^m p_k^{\ell}\\
+i,j, k$ not equal \\
+$\implies x_i G( \hat{\vec{p}}) = \sum_{n m \ell} a_{n m \ell} x_i p_i^n p_j^m p_k^{\ell}\\$
+\underline{recall:} $[x_i, p_j] = i \hbar \delta_{ij} \implies [ x_i, p_j] = i \hbar\\
+x_i p_i^n = ( x_i p_i) p_i^{n-1} = ( i \hbar + p_i x_i) p_i^{n-1}\\
+=i \hbar p_i ^{n-1} + p_i x_i p_i^{n-1} = i \hbar p_i^{n-1} + p_i x_i p_i p_i^{n-2}\\
+=i \hbar p_i^{n-1} + p_i (i \hbar + p_i x_i) p_i^{n-2}\\
+= i \hbar p_i^{n-1} + i \hbar p_i^{n-1} + p_i^2 x_i p_i^{n-2}\\
+= 2 i \hbar p_i^{n-1} + p_i^2 x_i p_i^{n-2} = \dots\\
+= n i \hbar p_i^{n-1} + p_i^n x_i p_i^{n-n} = i \hbar n p_i^{n-1} + p_i^n x_i\\
+\implies [x_i, G( \hat{\vec{p}})] = \sum_{n m \ell} a_{n m \ell} ( x_i p_i^n - p_i^n x_i) p_j^m p_k^{\ell}\\
+= \sum_{n m \ell} a_{n m \ell} ( i \hbar n p_i^{n-1} + p_i^n x_i - p_i^n x_i) p_j^m p_k^{\ell}\\
+= \sum_{n m \ell} a_{n m \ell} i \hbar n p_i^{n-1} p_j ^m p_k^{\ell}\\
+= i \hbar \sum_{n m \ell} a_{n m \ell} \frac{\partial ( p_i ^n p_j^m p_k^{\ell})}{\partial p_i}\\
+= i \hbar \frac{\partial}{\partial p_i} G ( \hat{\vec{p}})\\$
+likewise $[p_i, F( \hat{\vec{x}}) = - i \hbar \frac{\partial F}{\partial x_i}$
+
+
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $[AB, C] = A[ B, C] + [A, C] B\\
+{[A, BC]} = [A, B] C + B[A,C]\\
+T(\vec{\ell}) = \exp(- \frac{i}{\hbar} \vec{p} \cdot \vec{\ell}),\,\, T(\vec{\ell}) | \vec{x}' \rangle = | \vec{x}' + \vec{\ell} \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $p'$ are eigenvalues $p$ is an operator\\
+\item \underline{$\langle x' | p' \rangle = \frac{1}{\sqrt{2 \pi \hbar}} \exp(\frac{i}{\hbar} p' x')$}\\
+$\langle x' | p | p' \rangle =- i \hbar \frac{\partial}{\partial x'} \langle x' | p' \rangle = p' \langle x' | p' \rangle\\$
+ODE $\implies \langle x' | p ' \rangle = \frac{1}{\sqrt{2 \pi \hbar}} \exp ( \frac{i}{\hbar} p' x')\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$\Phi(p') = \langle p' | \alpha \rangle;\,\, \psi(x') = \langle x' | \alpha \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\Phi( p') = \frac{1}{\sqrt{2 \pi \hbar}} \int dx' \exp( - \frac{i}{\hbar} p' x') \psi(x')$}\\
+$\langle p' | \alpha \rangle = \langle p' | ( \int d x' | x' \rangle \langle x' | ) | \alpha \rangle\\
+= \int dx' \langle p' | x' \rangle \langle x' | \alpha \rangle\\
+= \int dx' \langle p' | x' \rangle \langle x' | \alpha \rangle\\
+= \int dx' \frac{1}{\sqrt{2 \pi \hbar}} \exp ( - \frac{i}{\hbar} p' x') \psi(x')\\
+= \frac{1}{\sqrt{2 \pi \hbar}} \int dx' \exp (- \frac{i}{\hbar} p' x') \psi( x')\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\psi( x') = \frac{1}{\sqrt{2 \pi \hbar}} \int dp' \exp( \frac{i}{\hbar} p' x') \Phi_p (p')$}\\
+$\psi(x') = \langle x' | \alpha \rangle = \langle x' | ( \int dp' | p' \rangle \langle p'|) | \alpha \rangle\\
+= \int dp' \langle x' | p' \rangle \langle p' | \alpha \rangle = \frac{1}{\sqrt{2 \pi \hbar}} \int d p'  ( \frac{i}{\hbar} p' x') \Phi_p(p')$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $H | \alpha \rangle = i \hbar \frac{\partial}{\partial t} | \alpha \rangle$ it might so happen that $| \alpha \rangle = | E \rangle i.e. H | E \rangle = E | E \rangle$ in which case $| \alpha \rangle$ is an eigen function of $H$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\langle x' | p | \alpha \rangle = - i \hbar \frac{\partial}{\partial x'} \langle x' | \alpha \rangle$}\\
+$\langle x' | p | \alpha \rangle = \langle x' | p ( \int dp' | p ' \rangle \langle p' | ) | \alpha \rangle\\
+= \int d p' p' \langle x' | p' \rangle \langle p' | \alpha \rangle\\
+=\int dp'' p' \langle ;' x' | p' \rangle \langle p' | \alpha \rangle\\
+- \int dp' p' \frac{1}{\sqrt{2 \pi \hbar}} \exp( \frac{i}{\hbar} p' x') \Phi ( p')\\
+- \frac{\hbar}{i} \frac{\partial}{\partial x'} ( \int dp' \frac{1}{\sqrt{2 \pi \hbar}} \exp( \frac{i}{\hbar} p' x') \Phi(p'))\\
+= - i \hbar \frac{\partial}{\partial x'} \psi(x') = - i \hbar \frac{\partial}{\partial x'} \langle x' | \alpha \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\langle p' | x | \alpha \rangle = i \hbar \frac{\partial}{\partial p'} \langle p' | \alpha \rangle$}\\
+$\langle p' | x | \alpha \rangle = \langle p' | x ( \int dx' | x' \rangle \langle x' | )| \alpha \rangle\\
+= \int dx' \langle p' | x. | x' \rangle \langle x' | \alpha \rangle\\
+= \int dx' x' \langle x' | p' \rangle^* \langle x'| \alpha \rangle\\
+= \int dx' - \frac{\hbar}{i} \frac{\partial}{\partial p'} \langle x' | p' \rangle^* \langle x' | \alpha \rangle\\
+= i \hbar \frac{\partial}{\partial p'} \langle p' | \alpha \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $U(t,t_0) \exp( - \frac{i}{\hbar} H(t0-t_0)) ( if H(t) = H)\\
+\implies x(t) = U(t,t_0) x U(t,t_0) = U^{\dagger} x U\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$| \psi, t \rangle = U | \psi \rangle\\
+\langle A \rangle (t) = \langle \psi | U^{\dagger} A U | \psi \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$N \equiv a^{\dagger} a,\,\, H = \hbar \omega (N + \frac{1}{2})\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$H | n \rangle = E_n | n \rangle \implies N |n \rangle = n | n \rangle$}\\
+\underline{Proof:}\\
+Assume$ H | n \rangle = E_n | n \rangle\\$
+$H | n \rangle = \hbar \omega ( N + \frac{1}{2}) | n \rangle = \frac{\hbar \omega}{2} | n \rangle + \hbar \omega N | n \rangle = E_n | n \rangle\\
+\implies \hbar \omega N | n \rangle = ( E_n - \frac{\hbar \omega}{2}) | n \rangle\\
+\implies N | n \rangle = \frac{1}{\hbar \omega} ( E_n - \frac{\hbar \omega}{2}) | n \rangle \equiv n | n \rangle\\
+$
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$a = \sqrt{ \frac{m \omega}{2 \hbar}} ( x + \frac{i p}{m \omega}),\,\, a^{\dagger} = \sqrt{ \frac{m \omega}{2 \hbar}} (x - \frac{i p}{ m \omega})\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$[ a, a^{\dagger} ] = 1$}\\
+$[a, a^{\dagger}] = a a^{\dagger} - a^{\dagger} a = \frac{m \omega}{2 \hbar} [ ( x + \frac{i p}{m \omega})(x - \frac{i p}{m \omega}) - ( x - i \frac{p}{m \omega})(x + \frac{i p}{m \omega})]\\
+= \frac{m \omega}{2 \hbar} [x^2 - \frac{i}{m \omega} x p +  \frac{i}{m \omega} px + ( \frac{1}{m \omega})^2 p^2 - x^2 - \frac{i}{m \omega} x p + \frac{i}{m \omega} px - \frac{p^2}{(m \omega})^2]\\
+= \frac{m \omega}{2 \hbar} [ - \frac{2 i}{m \omega} xp + \frac{2 i}{m \omega} p x]\\
+= - \frac{2 i m \omega}{2 \hbar} \frac{1}{ m \omega} [x,p] = - \frac{i}{\hbar} i \hbar = 1\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$[N, a] = - a;\,\, [ N, a^{\dagger} = a^{\dagger}$}\\
+$[N, a] = [ a^{\dagger} a, a] = a^{\dagger} [ a, a] + [a^{\dagger}, a] a\\
+= - a\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$N a^{\dagger} | n \rangle = ( n + 1) a^{\dagger} | n \rangle;\,\, N a | n \rangle = ( n-1) a | n \rangle$}\\
+$N a^{\dagger} | n \rangle = a^{\dagger} a a^{\dagger} | n \rangle = a^{\dagger} ( 1+ a^{\dagger} a) | n \rangle\\
+= a^{\dagger} | n \rangle + a^{\dagger} N | n \rangle =. a^{\dagger} | n \rangle + n a^{\dagger} | n \rangle\\
+= ( n+1) a^{\dagger} | n \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+this tells us that $N a^{\dagger} | n \rangle\\$
+results in $a^{\dagger} | n \rangle$ with an eigenvalue increased by 1 and justifies labeling the eigenstate $a^{\dagger} | n \rangle by |n+1 \rangle\\$
+or actually $a^{\dagger} | n \rangle \propto | n + \rangle$, need to normalize $| n +1 \rangle$\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$a | n \rangle = \sqrt{n} | n -1 \rangle;\,\, a^{\dagger} | n \rangle = \sqrt{n +1} | n +1 \rangle$}\\
+\underline{Note:} $N a^{\dagger} | n \rangle = ( n + 1) a^{\dagger} | n \rangle \implies a^{\dagger} | n \rangle = c | n +1 \rangle\\
+\implies \langle n | a a^{\dagger} | n \rangle = | c |^2\\$
+but $\langle n | a a^{\dagger} | n \rangle = \langle n | ( 1 + a^{\dagger} a ) | n \rangle = 1 + \langle n | N | n \rangle = 1 + n\\
+\implies c = \sqrt{n. +1 }\\
+\therefore a^{\dagger} | n \rangle = c | n +1 \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\frac{dp}{dt} = - m \omega^2 x$}\\
+\underline{recall:} $\frac{d \langle p \rangle}{dt} = \frac{i}{\hbar} \langle [ H, p] \rangle \implies \frac{dp}{dt} = \frac{i}{\hbar} [ H, p ]\\$
+\underline{recall:} $H = \frac{p^2}{2m} + \frac{1}{2} m \omega^2 x^2\\
+{[ H, p ]}= \frac{1}{2m} [ p^2, p] + \frac{1}{2} m \omega^2 [ x^2, p]\\
+= \frac{1}{2} m \omega^2 ( x [ x, p ] + [x,p] x)\\
+= \frac{1}{2} m \omega^2 (2 i \hbar x) = i \hbar m \omega^2 x\\
+\implies \frac{dp}{dt} = \frac{i}{\hbar} i \hbar m \omega^2 x = - m \omega^2 x\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\frac{dx}{dt} = \frac{p}{m}$}\\
+\underline{recall:} $\frac{dx}{dt} = \frac{i}{\hbar} [H, x];\,\, H = \frac{p^2}{2m} + \frac{1}{2} m \omega^2 x^2\\
+{[H, x]} = \frac{1}{2m} [ p^2,x ] = \frac{1}{2m} ( p [ p, x] + [ p, x] p)\\
+= \frac{1}{2m} (-2 i \hbar p) = - i \hbar \frac{p}{m}\\
+\implies \frac{dx}{dt} = \frac{i}{\hbar} ( - i \hbar \frac{p}{m}) = \frac{p}{m}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$a(t) = a(0) exp(- i \omega t);\,\, a^{\dagger} (t)a^{\dagger} ( 0 ) exp(i \omega t) $}\\
+\underline{recall:} $\frac{da}{dt} = \frac{i}{\hbar} [ H, a];\,\, H = \hbar \omega ( a^{\dagger} a + \frac{1}{2})\\
+{[H, a]} = ( [ a^{\dagger} a, a] + [ \frac{1}{2}, a]) \hbar \omega\\
+= \hbar \omega ( a^{\dagger} [ a, a] + [ a^{\dagger}, a] a) = \hbar \omega [ a^{\dagger}, a] a = \hbar \omega a\\
+\implies \frac{da}{dt} = - \frac{i}{\hbar} \hbar \omega a = - i \omega a\\$
+likewise $\frac{d a^{\dagger}}{dt} = i \omega a^{\dagger}\\$
+Solve\\
+$\implies a(t) = a(0) \exp(- i \omega t);\,\, a^{\dagger} (t) = a^{\dagger} ( 0 ) \exp(i \omega t)\\$
+
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$x(t) = x(0) \cos \omega t + \frac{p(0)}{m \omega} \sin \omega t;\,\, p(t) = - m \omega x(0) \sin \omega t + p(0) \cos \omega t$}\\
+\underline{recall:} $a = \sqrt{ \frac{m \omega}{2 \hbar}} ( x  + \frac{i p}{m \omega});\,\, a^{\dagger} = \sqrt{ \frac{m \omega}{2 \hbar}} ( x- \frac{i p}{m \omega})\\
+a(t) = a(0) \exp ( - i \omega t)\\
+\sqrt{ \frac{m \omega}{2 \hbar}} ( x(t) + \frac{i p(t)}{m \omega}) = \sqrt{ \frac{m \omega}{2 \hbar}} (x + \frac{ip}{m \omega}) \exp(- i \omega t)\\
+\implies x(t) + \frac{i p(t)}{m \omega} = x \cos \omega t - i x \sin \omega t +  \frac{i p}{m \omega} \cos \omega t + \frac{p}{m \omega} \sin \omega t\\
+\implies x(t) + \frac{i p(t)}{m \omega} = ( x \cos \omega t + \frac{p}{m \omega} \sin \omega t) + i(- x \sin \omega t + \frac{p}{m \omega} \cos \omega t)\\
+\implies x(t) = x(0) \cos \omega t + \frac{p(0)}{m \omega} \sin \omega t;\,\, p(t) = - m \omega x(0) \sin \omega t + p(0) \cos \omega t$
+
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\frac{d N}{d \epsilon} = \frac{m L^2}{\pi \hbar^2}$}\\
+$N = \sum_{n_X, n_y} = 2 \int_0^{\pi/2} \int_0^n n dn d \theta\\$
+only positive $n_x, n_y,$ and $2 \sim$ spin\\
+$\implies N = \frac{\pi}{2} \frac{1}{2} n^2 = \frac{\pi n^2}{2}\\
+\psi(0) = \psi(L),\,\, \psi(x) = A e^{ikx} + B e^{-i k x}\\
+\implies \sin kL = 0 \implies k = \frac{n \\pi}{L}\\
+\epsilon = \frac{\hbar^2 k^2}{2m} = \frac{\hbar^2 n^2 \pi^2}{2 m L^2} \implies n^2 = \frac{2 m L^2 \epsilon}{\hbar^2 \pi^2}\\
+\implies \frac{d N}{d \epsilon} = \frac{\pi}{2} \frac{2 m L^2}{\hbar^2 \pi^2} = \frac{m L^2}{\pi \hbar^2}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+spose $J^2 | a, b \rangle = a | a, b \rangle;\,\, J_z | a, b \rangle = b | a, b \rangle\\$
+i.e. simultaneous eigenkets of $J^2$ and $J_z$ \\
+$J$ is generalized angular momenta, i.e. either $\vec{L} or \vec{S}$ or a combination of both\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$J_+ | a, b \rangle$ is an eigenket whose $J_z$ eigenvalue increased by $n \hbar$\\
+$J^2$ eigenvalue unaltered\\
+this process cannot continue forever\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$a \geq b^2$} $b$ upper limit\\
+\underline{recall:} $J^2 - J_z^2 = \frac{1}{2} ( J_+ J_+^{\dagger} + J_+^{\dagger} J_+)\\
+J_+ J_+^{\dagger} ,\,\,J_+^{\dagger} J_+$ have non negative expectation values because\\
+$J_+^{\dagger} | a, b \rangle \stackrel{\text{DC}}{\leftrightarrow} \langle a,b | J_+,\,\, J_+ | a, b \rangle \stackrel{\text{DC}}{\leftrightarrow} \langle a, b | J_+^{\dagger}\\$
+so for example $J_+^{\dagger} | a, b \rangle = | \lambda \rangle\\$
+then $\langle \lambda | \lambda \rangle = \langle a, b | J_+ J_+^{\dagger} | a, b \rangle >0\\
+\implies \langle a, b | ( J^2 - J_z^2) | a, b \rangle \geq 0\\
+\implies \langle a, b | J^2 | a, b \rangle \geq \langle a, b | J_z^2| a, b \rangle\\
+\implies a \geq b^2 \implies \sqrt{a} \geq b \implies$ upper bound for $b$\\
+call it $b_{max} \implies J_+ | a, b_{max} \rangle = 0\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$a = b_{max} ( b_{max} + \hbar )$}\\
+$J_+ | a, b_{max} \rangle = 0 \implies J_- J_+ | a, b_{max} \rangle = 0\\$
+\underline{recall:} $J_- J_+= J_x^2 + J_y^2 - i( J_y J_x - J_x J_y)\\
+=J^2 - J_z^2 - \hbar J_z\\
+\implies (J^2 - J_z^2 - \hbar J_z) | a, b_{max} \rangle =0\\
+\implies a- b_{max}^2 - \hbar b_{max} = 0\\
+\implies a= b_{max} (b_{max} + \hbar)\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+similarly $J_- | a, b_{min} \rangle = 0\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$a= b_{min} ( b_{min} - \hbar)$}$;\,\, -b_{max} \leq b \leq b_{max}\\
+J_- | a, b_{min} \rangle = 0\implies J_+ J_- | a, b_{min} \rangle = 0\\$
+\underline{recall:} $J_+ J_- = J^2 - J_z^2 + \hbar J_z\\
+\implies (J^2 - J_z^2 + \hbar J_z) | a, b_{min} \rangle = 0\\
+\implies a - b_{min}^2 + \hbar b_{min} = 0\\
+\implies a = b_{min}( b_{min} - \hbar)\\
+\implies b_{min} ( b_{min} - \hbar) = b_{max} ( b_{max} + \hbar)\\
+\implies b_{min} = - b_{max},\,\, b_{min} = b_{max} + \hbar\\$
+but $b_{min}$ cannot be greater than $b_{max} \\
+\implies b_{min} = - b_{max}\\
+\implies - b_{max} \leq b \leq b_{max}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$b_{max} = b_{min} + n \hbar$} $;\,\, b_{max} = \frac{n \hbar}{2}\\
+b$ increases in units of $\hbar\\
+\implies b_{max} = b_{min} + n \hbar = - b_{max} + n \hbar\\
+\implies 2 b_{max} = n \hbar \implies b_{max} = \frac{n \hbar}{2}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$J^2 | j, m \rangle = j( j+1) \hbar^2 | j, m \rangle;\,\, J_z | j, m \rangle = m \hbar | j, m \rangle$}\\
+define $j= \frac{b_{max}}{\hbar} = \frac{n}{2}\\
+\implies a = \hbar^2 j(j+1),\,\, b \equiv m \hbar$ ( convenient since b increases in units of $\hbar)\\
+m= - j, -j+1,\dots, j-1, j (2 j+1 state)\\
+\underline{recall:} J^2 |a,b \rangle = a | a, b \rangle;\,\, a = b_{max} ( b_{max} + \hbar)\\
+b_{max} = \frac{n \hbar}{2}\\
+\implies a = \frac{n}{2} \hbar^2( \frac{n}{2} + 1);\,\, motivates j \equiv \frac{n}{2}\\
+\implies a= j \hbar^2 ( j+ 1)\\
+\underline{recall:} b_{min} = b_{max} - n \hbar;\,\, b_{max} = \frac{n \hbar}{2}\\
+\implies b_{min} = \frac{n \hbar}{2} - n \hbar = - \frac{n}{2} \hbar = - j \hbar\\
+and b_{min} increases in units of \hbar \implies b = m \hbar\\
+(j is a half integer or integer and all m values will be either half integers or integers)
+\implies \begin{cases} J^2 |j, m \rangle = j(j+1) \hbar^2 |j, m \rangle\\
+J_z | j, m \rangle = m \hbar|j, m \rangle \end{cases}$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\mathscr{J}( d \vec{x}') | \vec{x} ' \rangle \equiv | \vec{x}' + d \vec{x} ' \rangle $}\\
+\underline{Properties:}\\
+$| \alpha \rangle \rightarrow \mathscr{J} (d \vec{x}' ) | \alpha \rangle = \mathscr{J} ( d \vec{x}') \int d^3 x' | \vec{x}' \rangle \langle \vec{x}' | \alpha \rangle\\
+= \int d^3 x' | \vec{x}' + d \vec{x} ' \rangle \langle \vec{x}' | \alpha \rangle\\
+or \int d^3 x' | \vec{x}' + d \vec{x}' \rangle \langle \vec{x}' | \alpha \rangle = \int d^3 x' | \vec{x} ' \rangle \langle \vec{x}' - d \vec{x}' | \alpha \rangle\\
+\langle \alpha | \alpha r\angle = \langle \alpha \mathscr{J}^{\dagger} (d \vec{x}' ) \mathscr{J} ( d \vec{x}' ) | \alpha \rangle\\$
+( translated state must be normalized)\\
+$\implies \mathscr{J}^{\dagger} ( d \vec{x}' ) \mathscr{J} ( d \vec{x}') = 1 (unitary)\\
+\mathscr{J} ( d \vec{x}'') \mathscr{J} ( d \vec{x}') = \mathscr{J} ( d \vec{x}' + d \vec{x}'')\\
+\mathscr{J} ( - d \vec{x}') = \mathscr{J}^{-1} ( d \vec{x}')\\
+\lim_{d \vec{x}' \rightarrow 0} \mathscr{J} ( d \vec{x}') = 1$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\mathscr{J} ( d \vec{x}' ) = 1- i \vec{K} \cdot d \vec{x}'$}\\
+we show this operator satisfies defining operators for $\mathscr{J} ( d \vec{x}')\\
+\mathscr{J}^{\dagger} ( d \vec{x}' ) \mathscr{J} ( d \vec{x}' ) = ( 1+ i \vec{K}^{\dagger} \cdot d \vec{x}') ( 1- i \vec{K} \cdot d \vec{x}')\\
+= 1- i \vec{K} \cdot d \vec{x}' + i \vec{K}^{\dagger} \cdot d \vec{x}' + O[( d \vec{x}')^2]\\
+\approx 1- i ( \vec{K} - \vec{K}^{\dagger}) \cdot d \vec{x}' \approx 1\\
+\mathscr{J} ( d \vec{x}'') \mathscr{J} ( d \vec{x}') = (1-i \vec{K} \cdot d \vec{x}'') ( 1- i \vec{K} \cdot d \vec{x}')\\
+\approx 1 - i \vec{K} \cdot ( d \vec{x}' + d \vec{x}'') = \mathscr{J} ( d \vec{x}' + d \vec{x}'')\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$ [ \vec{x}, \mathscr{J} ( d \vec{x}')] = d \vec{x}' I$} see page 76 in Sakuri\\
+$\vec{x} \mathscr{J} ( d \vec{x}') | \vec{x}' \rangle = \vec{x} | \vec{x}' + d \vec{x}' \rangle = ( \vec{x}' + d \vec{x}' ) | \vec{x}' + d \vec{x}' \rangle\\
+\mathscr{J} ( d \vec{x}') \vec{x} | \vec{x}' \rangle = \vec{x}' \mathscr{J} ( d \vec{x}') | \vec{x}' \rangle = \vec{x}' | \vec{x}' + d \vec{x}' \rangle\\
+\implies [ \vec{x}, \mathscr{J} ( d \vec{x}')]| \vec{x}' \rangle = d \vec{x}' | \vec{x}' d \vec{x}' \rangle \approx d \vec{x}' | \vec{x} ' \rangle\\
+\implies [ \vec{x} , \mathscr{J} ( d \vec{x}' ) ] = d \vec{x}'\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$[ x_i, K_j] =i \delta_{ij} I$}\\
+\underline{racall:} $[ \vec{x} \mathscr{J} ( d \vec{x}') ] = d \vec{x}'\\$
+Choose $d \vec{x}'$ in direction of $\hat{x}_j,$ take scalar product $\hat{x}_i$\\
+\underline{Note:}$ \hat{x}_i$ is a unit vector not an operator\\
+$\implies \hat{x}_i \cdot [ \vec{x}, \mathscr{J} ( d \vec{x}') ] = \hat{x}_i \cdot [ \vec{x}, 1-i \vec{K} \cdot d \vec{x}' ]\\
+= - i \hat{x}_i \cdot [ \vec{x}, \vec{K} \cdot d \vec{x}' ] = - i ( x_i \vec{K} \cdot d \vec{x}' - \vec{K} \cdot d \vec{x}' x_i)\\
+= - i ( x_i K_j - K_j x_i) d x_j' = \hat{x}_i \cdot d \vec{x}' = d x_j' \delta_{ij}\\
+\implies [ x_i, K_j] = i \delta_{ij}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\mathscr{J} (d \vec{x}' ) = 1- i \vec{p} \cdot d \vec{x}'/ \hbar$}\\
+it appears we cans et \\
+$\vec{K} = \frac{\vec{p}}{universal constant with units of action} = \frac{\vec{p}}{\hbar}\\
+\implies \mathscr{J} ( d\vec{x}' ) = 1- i \frac{\vec{p} \cdot d \vec{x}'}{\hbar}$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$\mathscr{J}(\Delta x' \hat{x}) = \lim_N \rightarrow \infty ( 1- \frac{i p_x \Delta x'}{N x})^N = \exp( -  \frac{i p_x \Delta x'}{\hbar})\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$| \alpha, t_0; t \rangle = \mathscr{U} (t, t_0) | \alpha, t_0 \rangle\\$
+has similar properties to translation operator $\mathscr{J}( d \vec{x}')\\
+\mathscr{U}( t_0 + dt, t_0) = 1- i \Omega dt\\
+\Omega = \frac{H}{\hbar}\\
+\mathscr{U}(t_0 + dt, t_0) 1- \frac{i H dt}{\hbar};\,\, \mathscr{U}(t, t_0) \exp ( - \frac{i H}{\hbar} (t-t_0))\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$i \hbar \frac{\partial}{\partial t} \mathscr{U} ( t, t_0) = H \mathscr{U} ( t, t_0)$}$;\,\, i \hbar \frac{\partial}{\partial t} | \alpha, t_0;\,\, t \rangle = H | \alpha, t_0; t \rangle\\
+\mathscr{U}(t + dt, t_0) = \mathscr{U}( t+ dt, t) \mathscr{U}(t, t_0) = (1- \frac{i H dt}{\hbar}) \mathscr{U}(t, t_0)\\
+\mathscr{U} ( t+ dt, t_0) - \mathscr{U}( t, t_0) = - i \frac{H}{\hbar} dt \mathscr{U}(t,t_0)\\
+\implies i \hbar \frac{\partial}{\partial t} \mathscr{U}(t,t_0) = H \mathscr{U}(t,t_0)\\
+i \hbar \frac{\partial}{\partial t} \mathscr{U}(t,t_0) | \alpha, t_0 \rangle = H \mathscr{U}( t, t_0) | \alpha, t_0 \rangle\\
+i \hbar \frac{\partial}{\partial t} | \alpha, t_0;\,\, t \rangle = H | \alpha, t_0; t \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$| \alpha \rangle_R = \mathscr{D} ( R) | \alpha \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\mathscr{D} ( \hat{n}, d \phi) =1-i ( \frac{\vec{J} \cdot \hat{n}}{\hbar}) d \phi$}\\
+$U_{\varepsilon} = 1- i G \varepsilon$ (general infititesimal operator)\\
+$G \rightarrow \frac{J_k}{\hbar} \varepsilon \rightarrow d \phi,\,\, U_{\varepsilon} \rightarrow \mathscr{D} ( \hat{x}_k, d \phi)\\
+\implies \mathscr{D} ( \hat{x}_k, d \phi) = 1- i \frac{\vec{J} \cdot \hat{x}_k}{\hbar} d \phi\\$
+or let $\hat{n} = \hat{x}_k\\
+\therefore \mathscr{D} ( \hat{n}, d \phi) 1- i ( \frac{\vec{J} \cdot \hat{n}}{\hbar})d \phi\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $\vec{J} can be \vec{L} = \vec{x} \times \vec{p} or \vec{S}$ or both\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+
+\underline{Note:} $\forall R 3 \times 3$ rotation matrix acting on $\vec{v}\\
+\exists \mathscr{D} ( R)$ acting on a ket in ket space\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\mathscr{D}_{\hat{n}} ( \phi) = \lim_{N \rightarrow \infty} [ 1- i ( \frac{\vec{J} \cdot \hat{n}}{\hbar}) ( \frac{\phi}{N})]^N$}\\
+$\mathscr{D}_{\hat{n}}( \phi) = \lim_{N \rightarrow \infty} [ 1- i ( \frac{\vec{J} \cdot \hat{n}}{\hbar}) ( \frac{\phi}{\hbar})]^N = \exp ( - i \frac{\vec{J} \cdot \hat{n}}{\hbar} \phi)\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\exp( \frac{-i \vec{\sigma} \cdot \hat{n} \phi}{2}) = \mathbf{1} \cos ( \frac{\phi}{2}) - i \vec{\sigma} \cdot \hat{n} \sin \frac{\phi}{2}$}\\
+\underline{recall:} $\mathscr{D}_{\hat{n}} ( \phi) = \exp ( - i \frac{\vec{J} \cdot \hat{n}}{\hbar} \phi),\,\, \vec{J} = \vec{S} = \frac{\hbar}{2} \vec{\sigma};\,\, ( \vec{\sigma} \cdot \vec{a})^2 = | \vec{a}|^2\\
+\implies \mathscr{D}_{\hat{n}}(\phi) = \exp ( - i \frac{\vec{\sigma} \cdot \hat{n}}{2} \phi) = \sum_{n=0}^{\infty} \frac{1}{n!} ( - i \frac{\vec{\sigma} \cdot \hat{n}}{2} \phi)^n\\
+= \sum_{n=0} \frac{1}{(2n + 1)!} ( - i \frac{\vec{\sigma} \cdot \hat{n}}{2} \phi)^{2n+1} + \sum_{n=0} \frac{1}{(2 n)!} (- i \frac{\vec{\sigma} \cdot \hat{n}}{2} \phi)^{2n}\\
+= - i \sum_n \frac{1}{(2n+1)!} ( -1)^n ( \vec{\sigma} \cdot \hat{n})^{2n} ( \frac{\phi}{2}^{2n+1} ( \vec{\sigma} \cdot \hat{n})\\
++ \sum_n \frac{1}{(2n)!} ( -1)^n ( \vec{\sigma} \cdot \hat{n})^{2n} ( \frac{\phi}{2})^{2n}\\
+( \vec{\sigma} \cdot \hat{n})^{2n} = (( \vec{\sigma} \cdot \hat{n})^2)^n = | \hat{n}|^n = 1\\
+\therefore \mathscr{D}_{\hat{n}}(\phi) = \mathbf{1} \cos ( \frac{\phi}{2}) - i \vec{\sigma} \cdot \hat{n} \sin \frac{\phi}{2}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$( \vec{\sigma} \cdot \vec{a})( \vec{\sigma} \cdot \vec{b}) = \vec{a} \cdot \vec{b} + i \vec{\sigma} \cdot ( \vec{a} \times \vec{b}) \implies ( \vec{\sigma} \cdot \vec{a})^2 = | \vec{a}|^2$}\\
+$( \vec{\sigma} \cdot \vec{a}) ( \vec{\sigma} \cdot \vec{b}) = \sum_{i,j} \sigma_i a _i \sigma_i b_j = \sum_{i,j} ( \frac{1}{2} \{ \sigma_i, \sigma_j \} + \frac{1}{2} [ \sigma_i, \sigma_j ]) a_i b_j\\$
+\underline{recall:} $\{ \sigma_i, \sigma_j \} = 2 \delta_{ij} \mathbf{1} ;\,\, [ \sigma_i, \sigma_j ] = 2 i \epsilon_{ijk} \sigma_k;\\
+\implies ( \vec{\sigma} \cdot \vec{a})(\vec{\sigma} \cdot \vec{b}) = \sum_{i,j} ( \delta_{jk} + i \epsilon_{ijk} \sigma_{k}) a_i b_j,\,\, (\vec{a}\times \vec{b})_k = \epsilon_{ijk} a_i b_j\\
+= \sum_{i,j} ( \delta_{ij} a_i b_j + i a_i b_j \epsilon_{ijk} \sigma_k)\\
+= \sum_{ij} ( \delta_{ij} a_i b_j + i ( \vec{a} \times \vec{b}_k \sigma_k)\\
+= \vec{a} \cdot \vec{b} + i \vec{\sigma} \cdot( \vec{a} \times \vec{b})$\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$| n \rangle = | n^{(0)} \rangle + \lambda \sum_{k \neq n} | k^{(0)} \rangle \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}}\\
++ \lambda^2 ( \sum_{k \neq n} \sum_{\ell \neq n} \frac{|k^{(0)} \rangle V_{k \ell} V_{\ell n}}{(E_n^{(0)} - E_k^{(0)})(E_n^{(0)} - E_{\ell}^{(0)})} - \sum_{k \neq n} \frac{| k^{(0)} \rangle V_{nn} V_{kn}}{(E_n^{(0)} - E_k^{(0)})^2})\\
++ \cdots$}\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$(E_n^{(0)} - H_0) |n \rangle = ( \lambda V - \Delta_n) |n \rangle$}\\
+$H_0 | n^{(0)} \rangle = E_n ^{(0)} | n^{(0)} \rangle\\
+(H_0 + \lambda V) |n \rangle_{\lambda} = E_n^{(\lambda)} | n \rangle_{\lambda};\,\, | n \rangle \equiv | n \rangle_{\lambda},\,\, E_n^{(\lambda)} = E_n\\
+\Delta_n \equiv E_n - E_n^{(0)}\\
+(E_n - H_0)|n \rangle = \lambda V | n \rangle\\
+\implies (\Delta_n + E_n^{(0)} - H_0) | n \rangle = \lambda V | n \rangle\\
+\implies ( E_n^{(0)} - H_0) | n \rangle = ( \lambda V - \Delta_n) | n \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$ \langle n^{(0)} | ( \lambda V - \Delta_n) | n \rangle = 0$}\\
+\underline{recall:} $( E_n^{(0)} - H_0) | n \rangle = ( \lambda V - \Delta_n) | n \rangle\\
+\langle n^{(0)} | ( E_n^{(0)} - H_0) | n \rangle = E_n^{(0)} \langle n^{(0)} | n \rangle - E_n^{(0)} \langle n^{(0)} | n \rangle = 0\\
+= \langle n^{(0)} | ( \lambda V - \Delta_n) | n \rangle = \lambda \langle n^{(0)} | V | n \rangle - \Delta_n \langle n^{(0)} | n \rangle\\
+\implies \langle n^{(0)} | n \rangle =0 ???\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \item \underline{$| n \rangle = c_n( \lambda) | n^{(0)} \rangle + \frac{1}{E_n^{(0)} - H_0} \phi_n ( \lambda V - \Delta_n) | n \rangle$}\\
+$\phi_n \equiv 1- | n^{(0)} \rangle \langle n^{(0)}| = \sum_{k} | k^{(0)} \rangle \langle k^{(0)} | - | n^{(0)} \rangle \langle n^{(0)}|\\
+= \sum_{k \neq n} | k^{(0)} \rangle \langle k^{(0)}|\\$
+we would like to invert $(E_n^{(0)} - H_0)$\\
+but we cant do this if $(E_n^{(0)} - H_0)$ acts on $| n^{(0)} \rangle\\$
+\underline{Note:} $\frac{1}{E_n^{(0)} - H_0} | n^{(0)} \rangle = \frac{1}{E_n^{(0)} - E_n^{(0)}} | n^{(0)} \rangle =$ undefined
+but we just showed $\langle n^{(0)} | ( \lambda V - \Delta_n) | n \rangle = 0$ so I'm not sure why  $\frac{1}{E_n^{(0)} - H_0}$ is not well defined since it wont act on $| n^{(0)} \rangle$, but whatever.\\
+Since $\frac{1}{E_n^{(0)} - H_0}$ might act on $| n^{(0)} \rangle$ lets take out $| n^{(0)} \rangle$, recall we can define an operator $H = \sum_{k, k'} \langle k' | H | k \rangle$ but if it is diagonal in this basis then $H= \sum_k \langle | H | k \rangle = \sum_k H | k \rangle \langle k |\\$
+so let's do\\
+$\frac{\phi_n}{E_n^{(0)} - H_0} = \sum_{k \neq n} \frac{1}{E_n^{(0)} - E_k^{(0)}} | k^{(0)} \rangle \langle k^{(0)} |\\$
+\underline{Note:} $\phi ( \lambda V - \Delta_n) | n \rangle = ( 1- | n^{(0)} \rangle \langle n^{(0)} | ) ( \lambda V - \Delta_n) | n \rangle\\
+= ( \lambda V - \Delta_n) | n \rangle - | n^{(0) } \rangle \langle n^{(0)} | ( \lambda V - \Delta_n) | n \rangle\\$
+\underline{recall:} $\langle n^{(0)} | ( \lambda V - \Delta_n) | n \rangle = 0\\
+\implies \phi_n ( \lambda V - \Delta_n) | n \rangle = ( \lambda V - \Delta_n) | n \rangle\\$
+Ansatz: $(E_n^{(0)} - H_0) | n \rangle = \phi_n ( \lambda V - \Delta_n) | n \rangle\\
+\implies | n \rangle = \frac{1}{E_n^{(0)} - H_0} \phi_n ( \lambda V - \Delta_n) | n \rangle ?\\$
+this doesn't work because we need $| n \rangle \rightarrow | n^{(0)} \rangle\\$
+as $\lambda \rightarrow 0$ but $| n \rangle \rightarrow 0$ currently so force it to work\\
+$| n \rangle = c_n( \lambda) | n^{(0)} \rangle + \frac{1}{E_n^{(0)} -H_0} \phi_n ( \lambda V - \Delta_n) | n \rangle\\$
+\underline{Note:} $\lim_{\lambda \rightarrow 0} c_n( \lambda) = 1;\,\, \langle n^{(0)} | n \rangle = c_n ( \lambda) + \langle n^{(0)} | \frac{1}{E_n^{(0)} - H_0} \phi_n ( \lambda V - \Delta_n) | n \rangle\\
+= c_n ( \lambda) + \langle n^{(0)} | \frac{1}{E_n^{(0)} - E_k^{(0)}} \sum_{k \neq n} | k^{(0)} \rangle \langle k^{(0)} |\\$
+(I don't think $\frac{1}{E_n^{(0)} - H_0}$ is Hermitean?)\\
+$(\lambda V - \Delta_n) | n \rangle\\
+= c_n ( \lambda) + 0 = c_n(\lambda)\\$
+set $c_n ( \lambda) = 1\\
+\therefore | n \rangle = | n^{(0)} \rangle + \frac{\phi_n}{E_n^{(0)} - H_0} ( \lambda V - \Delta_n) | n \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\Delta_n = \lambda \langle n^{(0)} | V | n \rangle$}\\
+\underline{recall:} $\langle n^{(0)} | ( \lambda V - \Delta_n) | n \rangle = 0\\
+\therefore \lambda \langle n^{(0)} | V | n \rangle = \Delta_n\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\Delta_n^{(N)} = \langle n^{(0)} | V | n^{(N-1)} \rangle$}\\
+$| n \rangle = | n^{(0)} \rangle + \lambda | n^{(1)} \rangle + \lambda^2 | n^{(2)} \rangle + \cdots\\
+\Delta_n = \lambda \Delta_n^{(1)} + \lambda^2 \Delta_n^{(2)} + \cdots\\$
+\underline{recall:} $\Delta_n = \lambda \langle n^{(0)} | V | n \rangle\\
+= \lambda \langle n^{(0)} | V ( |n^{(0)} \rangle + \lambda | n^{(1)} \rangle + \lambda^2 | n^{(2)} \rangle + \cdots)\\
+= \lambda \langle n^{(0)} | V | n^{(0)} \rangle + \lambda^2 \langle n^{(0)} | V | n^{(1)} \rangle + \lambda^3 \langle n^{(0)} | V | n^{(2)} \rangle + \cdots\\$
+compare with $\Delta_n$ expansion\\
+$\therefore \Delta_n^{(N)} =\langle n^{(0)} | V | n^{(N-1)} \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$|n^{(1)} \rangle = \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle$}\\
+\underline{recall:} $| n \rangle = | n^{(0)} \rangle + \frac{\phi_n}{E_n^{(0)} - H_0} ( \lambda V - \Delta_n) | n \rangle\\$
+plug in $\Delta_n$ and $| n \rangle$ expansion\\
+$\implies | n \rangle = | n^{(0)} \rangle + \frac{\phi_n}{E_n^{(0)} -H_0} ( \lambda V - \lambda \Delta_n^{(1)} - \lambda^2 \Delta_n^{(2)} - \cdots) ( | n^{(0)} \rangle + \lambda | n^{(1)} \rangle + \cdots)\\
+= | n^{(0)} \rangle + \frac{\phi_n}{E_n^{(0)} - H_0} \lambda V | n^{(0)} \rangle - \frac{\phi_n}{E_n^{(0)} - H_0} \lambda \Delta_n^{(1)} | n^{(0)} \rangle\\
++ \frac{\phi_n}{E_n^{(0)} - H_0} \lambda^2 V | n^{(1)} \rangle - \frac{\phi_n}{E_n^{(0)} - H_0} \lambda^2 \Delta_n^{(2)} | n^{(0)} \rangle\\
+= | n^{(0)} \rangle + \lambda( \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle - \frac{\phi_n}{E_n^{(0)} - H_0} \Delta_n^{(1)} | n^{(0)} \rangle\\$
+but $\phi_n |n^{(0)} \rangle = ( \sum_{k \neq n} | k^{(0)} \rangle \langle k^{(0)} | ) | n^{(0)} \rangle = 0\\
+\therefore | n^{(1)} \rangle = \frac{\phi_n}{E_n^{(0)} -H_0} V | n^{(0)} \rangle + \lambda^2 \frac{\phi_n}{E_n^{(0)} - H_0} ( V - \Delta_n^{(1)} ) n^{(1)} \rangle\\
+| n \rangle = | n^{(0)} \rangle + \lambda | n^{(1)} \rangle + \lambda^2 | n^{(2)} \rangle + \cdots\\
+\Delta_n = \lambda_n^{(1)} + \lambda^2 \Delta_n^{(2)} + \cdots\\
+| n \rangle = | n^{(0)} \rangle + \sim( \lambda V - \Delta_n) | n \rangle\\
+= | n^{(0)} \rangle + \sim ( \lambda V - \lambda \Delta_n^{(1)} - \lambda^2 \Delta_n^{(2)} - \cdots)(| n^{(0)} \rangle + \lambda |n^{(1)} \rangle + \lambda^2 | n^{(2)} \rangle + \cdots)\\
+= | n^{(0)} \rangle + \sim( \lambda V - \lambda \Delta_n^{(1)} ) + \sim ( \lambda^2 V | n^{(1)} \rangle \Delta_n^{2)} \lambda^2 | n^{(1)} \rangle)\\
+= | n^{(0} \rangle + \sim( \lambda V - \lambda \Delta_n^{0)}) + \sim \lambda^2 ( V - \Delta_n^{(1)} ) | n^{(1)} \rangle + \cdots\\
+| n^{(2)} \rangle = \sim ( V - \Delta_n^{(1)} ) | n^{(1)} \rangle\\
+= \sim V | n^{(1)} \rangle - \sim \Delta_n^{(1)} | n^{(1)} \rangle\\
+= \frac{\phi_n}{E_n^{(0)} - H_0} V \frac{\phi_n}{E_n^{(0} - H_0} V | n^{(0)} \rangle - \frac{\Phi_n}{E_n^{(0)} - H_0} \langle N^{(0)} | V | N^{(0)} \rangle | n^{(1)} \rangle\\
+= \frac{\phi_n}{E_n^{(0)} - H_0} V \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle - \frac{\phi_n}{E_n^{(0)} - H_0} \langle n^{(0)} | V | n^{(0)} \rangle \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle\\
+$
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$| n^{(2)} \rangle = \frac{\phi_n}{E_n^{(0)} - H_0} V \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle\\
+- \frac{\phi_n}{E_n^{(0)} - H_0} \langle n^{(0)} | V | n^{0} \rangle \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle$}\\
+\underline{recall:} $| n^{(2)} \rangle = \frac{\phi_n}{E_n^{(0)} - H_0} ( V - \Delta_n^{(1)}) | n^{(1)} \rangle;\l,\, | n^{(1)} \rangle = \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{0} \rangle\\
+\Delta_n^{(1)} = \langle n^{(0)} | V | n^{(0)} \rangle\\$
+Plug in\\
+$\therefore | n^{(2)} \rangle = \frac{\phi_n}{E_n^{(0)} - H_0} V \frac {\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle - \frac{\phi_n}{E_n^{(0)} - H_0} \langle n^{(0)} | V | n^{(0)} \rangle \frac{\phi_n}{E_n^{(0)} -H_0} V | n^{(0)} \rangle\\
+$
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\Delta_n^{(1)} = \langle n^{(0)} | V | n^{(0)} \rangle;\,\, \Delta_n^{(2)} = \langle n^{(0)} | V \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle$}\\
+\underline{recall:} $\Delta_n^{(2)} = \langle n^{(0)} | V | n^{(1)} \rangle\\
+= \langle n^{(0)} | V \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\Delta_n \equiv E_n - E_n^{(0)} = \lambda V_{nn} + \lambda^2 \sum_{k \neq n} \frac{|V_{nk}|^2}{E_n^{(0)} - E_k^{(0)}} + \cdots$}\\
+\underline{recall:} $\Delta_n = \lambda \langle n^{(0)} | V | n \rangle;\,\, | n \rangle = | n^{(0)} \rangle + \lambda \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle + \cdots\\
+\implies \Delta_n = \lambda \langle n^{(0)} | V( | n^{())} \rangle + \lambda \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle + \cdots)\\
+= \lambda \langle n^{(0)} | V | n^{(0)} \rangle + \lambda^2 \langle n^{(0)} | V \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle + \cdots\\
+\langle n^{(0)} | V \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle\\
+= \langle n^{(0)} | V \frac{1}{E_n^{(0)} - H_0} ( \sum_{k \neq n} | k^{90)} \rangle \langle k^{(0)} |) V | n^{(0)} \rangle\\
+= \sum_{k \neq n} \frac{1}{E_n^{(0)} -E_k^{(0)}} \langle n^{(0)} | V | k^{(0)} \rangle \langle k^{(0)} | V | n^{(0)} \rangle\\
+ = \sum_{k \neq n} \frac{1}{E_n^{(0)} - E_k^{(0)}} V_{n k} V_{n k}^*\\
+ = \sum_{k \neq n} \frac{|V_{n k}|^2}{E_n^{(0)} - E_k^{(0)}}\\
+ \therefore \Delta_n = \lambda V_{nn} + \lambda^2 \sum_{k \neq n} \frac{|V_{nk}|^2}{E_n^{(0)} - E_k^{(0)}} + \cdots\\$
+ where $V_{n k} \equiv \langle n^{(0)} | V | k^{(0)} \rangle\\$
+ 
+ 
+ \hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$| n \rangle = | n^{(0)} \rangle + \lambda \sum_{k \neq n} | k^{(0)} \rangle \frac{V_{k n}}{E_n^{(0)} - E_k^{(0)}}$}\\
+\item \underline{$+ \lambda^2 ( \sum_{k \neq n} \sum_{\ell \neq n} \frac{| k^{(0)} \rangle V_{k \ell} V_{\ell n}}{(E_n^{(0)} -E_k^{(0)})(E_n^{(0)} - E_{\ell}^{(0)})} - \sum_{k \neq n} \frac{|k^{(0)} \rangle V_{nn} V_{k n}}{(E_n^{(0)} - E_k^{(0)})^2}) + \cdots$}\\
+\underline{recall:} $| n \rangle = | n^{90)} \rangle + \lambda \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle\\
++ \lambda^2 ( \frac{\phi_n}{E_n^{(0)} - H_0} V \frac{\phi_n}{E_n^{(0)} - H_0} V | n^{(0)} \rangle - \frac{\phi_n}{E_n^{(0)} - H_0} \lambda n^{(0)} | V | n^{(0)} \rangle\\
+\frac{\phi_n}{E_n^{(0)} - H_0} V |n^{(0)} \rangle ) + \cdots \\
+= | n^{(0)} \rangle + \lambda \frac{1}{E_n^{(0)} - H_0} ( \sum_{k \neq n} | k^{(0)} \rangle \langle k^{(0)} |) V | n^{(0)} \rangle\\
++ \lambda^2 ( \frac{1}{E_n^{(0)} - H_0} ( \sum_{k \neq n} | k^{(0)} \rangle \langle k^{(0)} |) V \frac{1}{E_n^{(0)} - H_0} ( \sum_{k \neq n} | k^{(0)} \rangle \langle k^{(0)}) V | n^{(0)} \rangle\\
+- \frac{1}{E_n^{(0)} - H_0} ( \sum_{k \neq n} | k^{(0)} \rangle \langle k^{(0)} |) \langle n^{(0)} | V | n^{(0)} \rangle \frac{1}{E_n^{(0)} - H_0} ( \sum_{\ell \neq n} | \ell^{(0)} \rangle \langle \ell^{(0)} |) V | n^{(0)} \rangle\\
+=| n^{(0)} \rangle + \lambda \sum_{k \neq n} \frac{|k^{(0)} \rangle V_{k n}}{E_n^{(0)} - E_k^{(0)}}\\
++ \lambda^2 \{ ( \sum_{k \neq n} \frac{ |k^{(0)} \rangle \langle k^{(0)}|}{E_n^{(0)} -E_k^{(0)}}) V ( \sum_{\ell \neq n} \frac{|\ell^{(0)} \rangle \langle \ell^{(0)}|}{E_n^{(0)} - E_{\ell}^{(0)}}) V | n^{(0)} \rangle\\
+- ( \sum_{k \neq n} \frac{|k^{(0)} \rangle \langle k^{(0)} |}{E_n^{(0)} - E_k^{(0)}}) V_{nn} ( \sum_{\ell \neq n} \frac{| \ell^{(0)} \rangle \langle \ell^{(0)} |}{E_n^{(0)} - E_{\ell}^{(0)}} ) V | n^{(0)} \rangle \}\\
+O(\lambda^2): \sum_{k \neq n} \sum_{\ell \neq n} \frac{| k^{(0)} \rangle V_{k \ell} V_{\ell n}}{(E_n^{(0)} - E_k^{(0)})(E_n^{(0)} - E_{\ell}^{(0)}}\\
+- \sum_{k \neq n} \sum_{\ell \neq n} \frac{|k^{(0)} \rangle \delta_{k \ell} V_{n n} V_{\ell n}}{(E_n^{(0)} - E_k^{(0)})(E_n^{(0)} - E_{\ell}^{(0)})}\\
+= \sum_{k \neq n} \sum_{\ell \neq n} \frac{| k^{(0)} \rangle V_{k \ell} V_{\ell n}}{( E_n^{(0)} E_k^{(0)})(E_n^{(0)} - E_{\ell}^{(0)})}\\
+- \sum_{k \neq n} \frac{| k^{(0)} \rangle V_{nn} V_{k n}}{(E_n^{())} - E_k^{(0)})^2}\\
+\therefore | n \rangle = | n^{(0)} \rangle + \lambda \sum_{k \neq n} | k^{(0)} \rangle \frac{V_{k n}}{E_n^{(0)} - E_k^{(0)}}\\
++ \lambda^2 ( \sum_{k \neq n} \sum_{\ell \neq n} \frac{ |k^{(0)} \rangle V_{k \ell} V_{\ell n}}{(E_n^{(0)} - E_k^{(0)})(E_n^{(0)} -E_{\ell}^{(0)})} - \sum_{k \neq n} \frac{| k^{(0)} \rangle V_{nn} V_{k n}}{(E_n^{(0)} - E_k^{(0)})^2})\\
++ \cdots\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+
+
+
+\section*{Classical mechanics}
+
+
+\item \underline{$\frac{d}{dt} ( \frac{\partial T}{\partial \dot{q}_j} - \frac{\partial T}{\partial q_j} = Q_j$}\\
+System in equillibrium\\
+$\implies \vec{F}_i = 0$ ( net force on each particle)\\
+$\implies \sum_i \vec{F}_i \cdot \delta \vec{r}_i = 0\\
+\vec{F}_i = \vec{F}_i^{(a)} + \vec{f}_i,\,\, \vec{F}_i^{(a)} \sim applied,\,\, \vec{F}_i \sim$ constraint\\
+$\implies \sum_i \vec{F}_i^{(a)} \cdot \delta \vec{r}_i + \sum_i \vec{f}_i \delta \vec{r}_i = 0\\$
+only consider $\sum_i \vec{f}_i \cdot \delta \vec{r}_i = 0\\$
+(think of a particle sliding on a table top, the normal force is perpendicular to the displacement)\\
+$\implies \sum_i \vec{F}_i^{(a)} \cdot \delta \vec{r}_i = 0\\
+\vec{F}_i = \dot{\vec{p}}_i$ ( not in equillibrium)\\
+$\implies \vec{F}_i - \dot{\vec{p}}_i =0$ (new "effective" force)\\
+$\implies \sum_i ( \vec{F}_i - \dot{ \vec{p}}_i) \cdot \delta \vec{r}_i = 0;\,\, \vec{F}_i = \vec{F}_i^{(a)} + \vec{f}_i\\
+\implies \sum_i ( \vec{F}_i^{(a)} + \vec{f}_i - \dot{\vec{p}}_i) \cdot \delta \vec{r}_i = 0\\
+\implies \sum_i ( \vec{F}_i^{(a)} - \dot{\vec{p}}_i) \cdot \delta \vec{r}_i = 0\\
+\vec{r}_i = \vec{r}_i ( q_j, t)\\
+\implies \vec{v}_i \equiv \frac{d \vec{r}_i}{dt} = \sum_k \frac{\partial \vec{r}_i}{\partial q_k} \dot{q}_k + \frac{\partial \vec{r}_ei}{\partial t}\\
+similarly \delta \vec{r}_i = \sum_j \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j\\
+\sum_i \vec{F}_i \cdot \delta \vec{r}_i = \sum_{i,j} \vec{F}_i \cdot \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j = \sum_j ( \sum_i \vec{F}_i \cdot \frac{\partial \vec{r}_i}{\partial q_j}) \delta q_j\\
+= \sum_j Q_j \delta q_j;\,\, Q_j = \sum_i \vec{F}_i \cdot \frac{\partial \vec{r}_i}{\partial q_j}\\
+\sum_i \dot{\vec{p}}_i \cdot \delta \vec{r}_i = \sum_i m_i \ddot{\vec{r}_i \cdot \delta \vec{r}_i\\
+= \sum_i m_i \ddot{\vec{r}}_i \cdot ( \sum_j \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j) = \sum_{i,j} m_i \ddot{\vec{r}}_i \cdot \frac[\partial \vec{r}_i}{\partial q_j} \delta q_j\\$
+\underline{Note:} $\sum_i m_i \ddot{\vec{r}}_i \cdot \frac{\partial \vec{r}_i}{\partial q_j} = \sum_i[ \frac{d}{dt} (m_i \dot{\vec{r}}_i \cdot \frac{\partial \vec{r}_i}{\partial q_j}) - m_i \dot{\vec{r}}_i \cdot \frac{d}{dt} ( \frac{\partial \vec{r}_i}{\partial q_j})]\\
+\frac{d}{dt} \frac{\partial \vec{r}_i}{\partial q_j} = \sum_k \frac{\partial^2 \vec{r}_i}{\partial q_j \partial q_k} \dot{q}_k + \frac{\partial^2 \vec{r}_i}{\partial q_j \partial t}\\
+= \frac{\partial}{\partial q_j} ( \sum_k \frac{\partial \vec{r}_i}{\partial q_k} \dot{q}_k + \frac{\partial \vec{r}_i}{\partial t}) = \frac{\partial \vec{v}_i}{\partial q_j}\\
+\frac{\partial \vec{v}_i}{\partial \dot{wq}_j} = \sum_k \frac{\partial \vec{r}_i}{\partial q_k} \delta_{kj} = \frac{\partial \vec{r}_i}{\partial q_j}\\
+\implies \sum_i m_i \ddot{\vec{r}}_i \cdot \frac{\partial \vec{r}_i}{\partial q_j} = \sum_i[ \frac{d}{dt} ( m_i \vec{v}_i \cdot \frac{\partial \vec{v}_i}{\partial \dot{q}_j}) - m_i \vec{v}_i \cdot \frac{\partial \vec{v}_i}{\partial q_j}]\\$
+\underline{recall:} $\sum_i ( \vec{F}_i - \dot{\vec{p}}_i) \cdot \delta \vec{r}_i = 0\\
+\implies \sum_i \dot{\vec{p}}_i \cdot \delta \vec{r}_i - \sum_i Q_i \delta q_i = 0\\
+\implies \sum_i ( m_i ( \frac{d}{dt} \vec{v}_i) \cdot \delta \vec{r}_i - Q_i \delta q_i) = 0\\
+\vec{v}_i \frac{\partial \vec{v}_i}{\partial \dot{q}_j} = \frac{1}{2} \frac{\partial}{\partial \dot{q}_j} v_i^2\\
+(\frac{d}{dt} \vec{v}_i) \cdot \delta \vec{r}_i = ( \frac{d}{dt} \vec{v}_i) \cdot \sum_j \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j\\
+= \sum_j ( \frac{d}{dt} \vec{v}_i) \cdot \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j\\
+= \sum_j ( \frac{d}{dt} ( \vec{v}_i \cdot \frac{\partial \vec{r}_i}{\partial q_j}) - \frac{d}{dt} ( \frac{\partial \vec{r}_i}{\partial q_j}) \cdot \vec{v}_i) \delta q_j\\
+\sum_i ( \frac{d}{dt} ( \vec{v}_i \cdot \frac{\partial \vec{v}_i}{\partial \dot{q}_j}) - \frac{d}{dt} ( \frac{\partial \vec{r}_i}{\partial \dot{q}_j}) \cdot \vec{v}_i) \delta q_j\\
+= \sum_i ( \frac{d}{dt} ( \vec{v}_i \cdot \frac{\partial \vec{r}_i}{\partial \dot{q}_j}) - \frac{\partial \vec{v}_i}{\partial q_j} \cdot \vec{v}_i) \delta q_j\\
+= \sum_i ( \frac{d}{dt} ( \frac{\partial}{\partial \dot{q}_j} \frac{1}{2} v_i^2) - \frac{\partial}{\partial q_j} \frac{1}{2} v_i^2) \delta q_j\\\\
+\implies \sum_i ( v\vec{F}_i - \dot{\vec{p}}_i) \cdot d\delta \vec{r}_i\\
+= \sum_j ( \frac{d}{dt} [ \frac{\partial}{\partial \dot{q}_j} ( \sum_i \frac{1}{2} m_i v_i^2)] - \frac{\partial}{\partial q_j} ( \sum_i \frac{1}{2} m_i v_i^2) - Q_j) \delta q_j\\
+= \sum_i [ \frac{d}{dt} ( \frac{\partial T}{\partial \dot{q}_j}) - \frac{\partial T}{|partial q_j} - Q_j ] \delta q_j = 0\\
+\implies \frac{d}{dt} ( \frac{\partial T}{\partial \dot{q}_j} ) - \frac{\partial T}{\partial q_j} = Q_j$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$L= \frac{m_1 +m_2}{2} \dot{\vec{R}}^2 + \frac{1}{2} \frac{m_1 m_2}{m_1 + m_2} \dot{\vec{r}}^2 - U( \vec{r}, \dot{\vec{r}}, \dots)$}\\
+assume $L= T( \vec{r}_1, \vec{r}_2) - U ( \vec{r}_2 - \vec{r}_1 , \dot{\vec{r}}_2 - \dot{\vec{r}}_1)\\$
+$\implies 6$ deg of freedom, choose generalized coordinates to be $\vec{R} = \vec{R}_{cm} and \vec{r} = \vec{r}_2 - \vec{r}_1$\\
+$\implies L = T ( \dot{\vec{R}}, \dot{\vec{r}}) - U ( \vec{r}, \dot{\vec{r}}, \dots)\\
+T =  \frac{1}{2} ( m_1 + m_2) \dot{\vec{R}}^2 + T'\\
+T' = \frac{1}{2} m_1 \dot{\vec{r}}_1'^2 + \frac{1}{2} m_2 \dot{\vec{r}}_2'^2,\,\, \vec{r}_i' (relative to cm)\\
+use \vec{r}_1 = \vec{R} + \vec{r}_1\,\, \vec{r}_2 = \vec{R} + \vec{r}_2';\,\, \vec{R} = \frac{1}{m_1 + m_2} ( m_1 \vec{r}_1 + m_2 \vec{r}_2)\\$
+then solve first 2 for $\vec{r}_1',\,\, \vec{r}_2'\\
+\implies \begin{cases} \vec{r}_1' = \frac{m_2}{m_1 + m_2} ( \vec{r}_1 - \vec{r}_2 ) = - \frac{m_2}{m_1 + m_2} \vec{r} \\ \vec{r}_2' = \frac{m_1}{m_1 + m_2} ( \vec{r}_2 - \vec{r}_1) \end{cases}$ (mathematica)\\
+plug into T' (mathematica)\\
+$\implies T' = \frac{1}{2} \frac{m_1 m_2}{m_1 + m_2} \dot{\vec{r}}^2\\
+\therefore L = \frac{m_1 + m_2}{2} \dot{\vec{R}}^2 + \frac{1}{2} \frac{m_1 m_2}{m_1 + m_2} \dot{\vec{r}}^2 - U ( \vec{r}, \dot{\vec{r}}, \dots)\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $\vec{R}$ is at rest or moving uniformly due to U and will not appear in EOM for $\vec{r}$, so drop it\\
+$\implies L = \frac{1}{2} \mu \dot{\vec{r}}^2 - U( \vec{r}, \dot{\vec{r}}, \dots)$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\ell = m r^2 \dot{\theta} = const.$}\\
+$L = \frac{1}{2} m ( \dot{r}^2 + r^2 \dot{\theta}^2) - V(r)$ (central force\\
+$\frac{\partial L}{\partial \theta} = \frac{dx}{Dt} \frac{\partial L}{\partial \dot{\theta}}\\
+\implies \frac{d}{dt} p_{\theta} = 0 \implies p_{\theta} = \ell = \frac{\partial L}{\partial \dot{\theta}} = m r^2 \dot{\theta}\\
+\therefore \ell = m r^2 \dot{\theta}$
+\underline{Note:} $\ell= | \vec{r} \times \vec{p}| = r m (v \sin \theta) = mr v_{\theta} = m r^2 \dot{\theta}$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$m \ddot{r} - \frac{\ell^2}{m r^3} = f(r)$}\\
+$\frac{\partial L}{\partial r} = \frac{d}{dt} \frac{\partial L}{\partial \dot{r}}\\
+\implies m r \dot{\theta}^2 - V'(r) = m \ddot{r}\\
+m \ddot{r} - m r \dot{\theta}^2 = - V'(r) = f(r),\,\, f(r) \sim$ force along $\hat{r}\\$
+\underline{recall:} $\ell = m r^2 \dot{\theta} \implies \dot{\theta} = \frac{\ell}{m r^2},\,\, plug in\\
+\implies m \dddot{r} - \frac{\ell^2}{m r^3} = f(r)\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\frac{1}{2} m ( \dot{r}^2 + r^2 \dot{\theta}^2) + V(r) = const.$}\\
+\underline{recall:} $m \ddot{r} - \frac{\ell^2}{m r^3} = - \frac{\partial V}{\partial r} = f(r)\\
+\implies m \ddot{r} = - \frac{d}{dr} ( V + \frac{1}{2} \frac{\ell^2}{m r^2})\\
+\implies m \dot{r} \ddot{r} = - \dot{r} \frac{d}{dr} ( V + \frac{1}{2} \frac{\ell^2}{m r^2})\\
+\implies \frac{d}{dt} ( \frac{1}{2} m \dot{r}^2) = - \frac{d}{dt} ( V + \frac{1}{2} \frac{\ell^2}{m r^2})\\
+\implies \frac{d}{dt} ( \frac{1}{2} m \dot{r}^2 + \frac{1}{2} \frac{\ell^2}{m r^2} + V ) = 0\\
+\implies \frac{1}{2} m \dot{r}^2 + \frac{1}{2} \frac{|ell^2}{m r^2} + V = \text{const.}\\$
+but $\frac{\ell^2}{m r^2} = \frac{m^2 r^4 \dot{\theta}^2}{m r^2} = m r^2 \dot{\theta}^2\\
+\therefore \frac{1}{2} m ( \dot{r}^2 + r^2 \dot{\theta}^2) + V(r) = E = \text{const.}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\dot{r} = \sqrt{ \frac{2}{m} ( E - V - \frac{\ell^2}{2 m r^2})}$}\\
+\underline{recall:} $\frac{1}{2} m ( \dot{r}^2 + r^2 \dot{\theta}^2 ) + V(r) = E\\
+\implies \frac{1}{2} m \dot{r}^2 + \frac{1}{2} \frac{\ell^2}{m r^2} + V = E\\
+\implies \frac{1}{2} m \dot{r}^2 = E - V - \frac{1}{2} \frac{\ell^2}{mr^2}\\
+\therefore \dot{r} = \sqrt{ \frac{2}{m} ( E- V - \frac{\ell^2}{2 m r^2})}\\
+\implies dt = \frac{dr}{\sqrt{ \frac{2}{m} ( E - V - \frac{\ell^2}{2mr^2})}}\\
+\therefore t = \int_{r_0}^r \frac{dr}{\sqrt{ \frac{2}{m} ( E - V - \frac{\ell^2}{2 m r^2})}}\\
+$
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$d \theta] = \frac{\ell dr}{ \sqrt{m r^2 \frac{2}{m} ( E - V(r) - \frac{\ell^2}{2 mr^2})}}$}\\
+\underline{recall:} $\ell = m r^2 \dot{\theta} \implies \ell dt = d \theta;\,\, dt = \frac{d r}{\sqrt{ \frac{2}{m} ( E - V - \frac{\ell^2}{2 m r^2})}}\\
+\therefore d \theta = \frac{\ell dr}{ \sqrt{ m r^2 \frac{2}{m} ( E - V(r) - \frac{\ell^2}{2 m r^2})}}$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\theta = \theta_0 - \int_{u_0}^u \frac{du}{\sqrt{ \frac{2m E}{\ell^2} - \frac{2 m a}{\ell^2} u^{-n - 1} - u^2}}$} (potential $\sim r^{n+1}$)\\
+$d \theta = \frac{\ell dr}{mr^2 \sqrt{ \frac{2}{m} ( E - V(r) - \ell^2}{2 m r^2})}\\
+= \frac{\ell dr}{m r^2 \sqrt{ \frac{2}{m} \frac{\ell^2}{2m} ( \frac{2 m E}{\ell^2} - \frac{2 m V}{\ell^2} - \frac{1}{r^2})}}\\
+= \frac{dr}{r^2 \sqrt{ \frac{2m E}{\ell^2} - \frac{2 m V}{\ell^2} - \frac{1}{r^2}}}\\
+u - \frac{1}{r},\,\, du = - \frac{1}{r^2} dr\\
+\therefore \theta = \theta_0 - \int_{u_0}^u \frac{du}{\sqrt{\frac{2 mE}{\ell^2} - \frac{2m}{\ell^2} V - u^2}}\\$
+most important potentials: $V = a r^{n+1} (force \sim r^n)\\
+n= 0, 1, \dots\\
+\therefore \theta = \theta_0 - \int_{u_0}^u \frac{du}{\sqrt{\frac{2mE}{\ell^2} - \frac{2 m a}{\ell^2} u^{-n - 1} - u^2}}\\
+$
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\frac{1}{r} = \frac{m k}{\ell^2} ( 1 + \sqrt{1 + \frac{2 E \ell^2}{m k^2} }\cos ( \theta - \theta' ))$}(gtravitational force)\\
+$\theta(u)$ equation above set $n= -2, a = k$\\
+$\implies \theta = \theta' - \int \frac{du}{\sqrt{ \frac{2 mE}{\ell^2} - \frac{2 m ku}{\ell^2} - u^2}}\\$
+\underline{Note:} $\theta' \neq \theta_0\\$
+use $\int \frac{dx}{\sqrt{ \alpha + \beta x + \gamma x^2}} = \frac{1}{\sqrt{- \gamma}} \arccos - \frac{ \beta + 2 \gamma x}{\sqrt{ q}}\\
+q= \beta^2 - 4 \alpha \gamma\\
+\implies \theta = \theta' - \arccos \frac{ \frac{\ell^2 u}{m k} - 1}{\sqrt{1 + \frac{2 E \ell^2}{m k^2}}}$ (solve for u = $\frac{1}{r})\\
+\therefore \frac{1}{r} = \frac{m k}{\ell^2} ( 1 + \sqrt{1 + \frac{2 E \ell^2}{m k^2}} \cos ( \theta - \theta
+'))$ (orbit equation)\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} general equation of conic w one focus at origin \\
+$\frac{1}{r} = C [ 1+ e \cos ( \theta - \theta')],\,\, e \sim$ eccentricity\\
+$\implies e = \sqrt{ 1 + \frac{2 E \ell^2}{m k^2}}\\$
+$e>1$ (hyperbola) $\implies E>0\\$
+$e = 1$ ( parabola) $\implies E = 0\\$
+$e< 1 (ellipse) \implies E< 0\\
+e=0 (circle) \implies E = - \frac{m k^2}{2 \ell^2}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$\implies \frac{1}{r} = \frac{m k}{\ell^2} ( 1+ e \cos ( \theta - \theta'))\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$V' = - \frac{k}{r} + \frac{\ell^2}{2m r^2};\,\, w/ f' = - \frac{\partial V'}{\partial r}$}\\
+\underline{recall:} $m \ddot{r} - \frac{\ell^2}{mr^3} = f(r) = - \frac{\partial V}{\partial r}\\
+\implies m \ddot{r} = - \frac{\partial V}{\partial r} - \frac{\partial}{\partial r} \frac{\ell^2}{2 m r^2} = - \frac{\partial}{\partial r} ( V + \frac{\ell^2}{2 m r^2})\\
+\implies f' \equiv m \ddot{r} = - \frac{\partial}{\partial r} ( V + \frac{\ell^2}{2m r^2}) \equiv - \frac{\partial}{\partial r} V'\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$f' = f + \frac{\ell^2}{m r^2} Let f = - \frac{k}{r^2}\\
+\implies V' \equiv - \frac{k}{r} + \frac{\ell^2}{2m r^2}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$\beta^2 = 3 + \frac{r}{f} \frac{df}{dr}|_{r=r_0}$ (derive)\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+spose we shoot a beam of particles at V repulsive, fixed particle\\
+s $\sim$ impact param\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\ell = m v_0 s = s \sqrt{2 m E}$}\\
+$\ell = | \vec{r} \times \vec{p} = r p \sin \theta = m v_0 s\\
+E = \frac{1}{2} m v_0^2$ (at $r= \infty V(\infty) = 0)\\
+\implies v_0 = \sqrt{\frac{2E}{m}}\\
+\implies m v_0 s = s \sqrt{2 m E}\\
+\therefore \ell = m v_0 s = s \sqrt{2 m E}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\sigma( \Theta) = \frac{s}{\sin \Theta} | \frac{ds}{d \Theta}|$}\\
+\underline{Note:} $\Theta$ is the scattering angle from horizontal and is $0 < \Theta < \pi \Theta$ is similar to spherical angle $\theta$ so this tells us scattering can happen in any direction\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+$\frac{dN}{dt} \propto I$\\
+constant of proportionality is $d \sigma$ or $\sigma d \Omega$\\
+$\sigma( \Omega) d \Omega = \frac{\text{Number of particles scattered into }d \Omega \text{  per unit time}}{\text{incident intensity}}\\$
+\underline{Note:} the beam incident intensity is the intensity (or flux) perpendicular to beam\\
+$d \Omega = \frac{dA}{r^2} = 2 \pi \sin \Theta d \Theta\\$
+incoming particles in a shell corresponds to an outgoing shell / time\\
+$2 \pi s I |ds|$ is a ring of incoming particles, s is the impact parameter
+$2 \pi s I | ds | = I \sigma ( \Omega) | d \Omega | = I 2 \pi \sin \Theta | d \Theta | \sigma( \Theta)\\
+\implies \sigma ( \Theta) = \frac{s}{\sin \Theta} | \frac{ds}{d \Theta}|\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\Theta (s) = \pi - 2 \int_0^{u_m} \frac{s du}{\sqrt{1- \frac{V(u)}{E} - s^2 u^2}}$}\\
+\underline{Note:} draw a line to closest approach, the angle to incoming angle to outgoing angle are equal due to time symmetry\\
+$\implies 2 \Psi + \Theta = \pi \implies \Theta = \pi - 2 \Psi\\$
+\underline{recall:} $\theta = \int_{r_0}^r \frac{dr}{r^2 \sqrt{ \frac{2 m E}{\ell^2} - \frac{2 m V}{\ell^2} - \frac{1}{r^2}}}+ \theta_0\\
+\psi$ is angle between incoming direction $\theta_0 = \pi$ and $r_m$ (distance of closest approach) thus\\
+$\theta_0 = \pi \implies r_0 = \infty when r = r_m \implies \theta = \pi-\Psi\\
+\implies \pi - \Psi = - \int_{r_m}^{\infty} \frac{dr}{r^2 \sqrt{ \frac{2 m E}{\ell^2} - \frac{2 m V}{\ell^2} - \frac{1}{r^2}}} + \pi\\
+\implies \Psi = \int_{r_m}^{\infty} \frac{dr}{r^2 \sqrt{ \frac{2 m E}{\ell^2} - \frac{2 m V}{\ell^2} - \frac{1}{r^2}}}\\$
+\underline{Note:} $\Theta$ and $\theta$ are similar but $\Theta$ is fixed (angle of outgoing radius) $\theta $describes its path.\\
+\underline{recall:} $\Theta = \pi - 2 \Psi\\
+\therefore \Theta(s) = \pi - 2 \int_{r_m}^{\infty} ( \frac{dr}{r^2 \sqrt{\frac{2 mE}{\ell^2} - \frac{2 m V}{\ell^2} - \frac[1}{r^2}})\\$
+\underline{recall:} $s= \frac{\ell}{\sqrt{2 m E}}\\
+\frac{dr}{r^2 \sqrt{ \frac{2 mE}{\ell^2} -  \frac{2 m V E}{\ell^2 E} - \frac{1}{r^2}}} = \frac{dr}{\frac{r^2}{r} \sqrt{ \frac{r^2}{s^2} -\frac{r^2}{E s^2} - 1}}\\
+= \frac{s dr}{r \sqrt{r^2 - \frac{V r^2}{E} - s^2}} = \frac{s dr}{r r^2 (1- \frac{V(r)}{E}) - s^2}\\
+r \rightarrow \frac{1}{u}\\
+\therefore \Theta (s) = \pi - 2 \int_0^{u_m} \frac{s du}{\sqrt{1- \frac{V(u)}{E} - s^2 u^2}}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\epsilon = \sqrt{1 + ( \frac{2 E s}{Z Z' e^2})^2}$}\\
+use $f = \frac{Z Z' e^2}{r^2}$ (repulsive)\\
+$\implies k = - Z Z' e^2\\$
+\underline{recall:} $\epsilon = \sqrt{1 + \frac{2 E \ell^2}{m k^2}};\,\, \ell = \sqrt{2 m E} s\\
+\implies \epsilon = \sqrt{ 1 + \frac{2 E \ell^2}{m ( Z Z' e^2)^2}} = \sqrt{1 + \frac{2 E ( 2 m E) r^2}{m( Z Z' e^2)^2}}\\
+= \sqrt{1 + ( \frac{2 E s}{Z Z' e^2})^2}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\frac{1}{r} = \frac{m Z Z' e^2}{\ell^2} ( \epsilon \cos \theta - 1)$}\\
+\underline{recall:} $\frac{1}{r} = \frac{m k}{\ell^2} ( 1 + \epsilon \cos ( \theta - \theta'))\\
+\theta' = \pi \implies \theta = 0$ is pariapsis (this is because $k< 0$ here)\\
+$k = - Z Z' e^2\\
+\implies \frac{1}{r} = \frac{m Z Z' e^2}{\ell^2} ( \epsilon \cos \theta - 1)\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\cos \Phi = \frac{1}{\epsilon}$}\\
+when $r \rightarrow \infty,\,\, \theta = \Psi$ (see my diagram in book)\\
+$\implies \epsilon \cos \theta - 1 = 0\\
+\implies \cos \Phi = \frac{1}{\epsilon}$
+
+
+
+
+\underline{Math Phys}\\
+\underline{turning differential operator into matrix example}\\
+Suppose we have the differential operator\\
+$\hat{p} = \frac{d}{dx} + a$ acting on the space spanned by $(1,x)$ then the matrix is obtained by acting on the basis, extracting the matrix then transposing the result, we transpose it because it works (lol)\\
+$(\frac{d}{dx} + a) 1 = a \cdot 1 + 0 \cdot x;\,\, ( \frac{d}{dx} + a) x = 1 + a \cdot x\\
+\implies M = \begin{pmatrix} a & 0 \\ 1 & a \end{pmatrix}\\$
+now $M \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \hat{p} \cdot 1 \neq a\\$
+but $M^{\dagger} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} a & 1 \\ 0 & a \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = a\\$
+so $\hat{p} \rightarrow M^{\dagger}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{greens functions} (ODE's)\\
+\underline{initial value}\\
+$L_t y(t) = f(t) solve L_t g[t;\,\, t_p] = \delta(t- t_p)\\
+\implies y(t) = \int_{-\infty}^t g[t; t_p] f(t_p) d t_p\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{Example}\\
+$m''(t) = - k x(t) + f(t)\\
+x(0) = 0,\,\, x'(0) = 0,\,\, f(t)=0,\,\, t<0\\
+m g''(t,t_p) + k g(t,t_p) = \delta(t- t_p)\\
+if t \neq t_p\\
+\implies m g''(t,t_p) + k g(t,t_p) = 0\\
+\implies g(t,t_p) = A \cos ( \sqrt{ \frac{k}{m}} t ) + B \sin ( \sqrt{ \frac{k}{m}} t) t>t_p\\$
+\underline{Note:} $t_p$ is the time the pulse is delivered so for $t< t_p$\\
+$g(t, t_p) = 0 t< t_p\\$
+to balance $\delta g''$ must be delta function $g'$ is step and $g$ is cts (kink), at $t= t_p$\\
+$\implies g(t,t_p) = \begin{cases} 0 t< t_p\\ A \cos \sqrt{\frac{k}|{m}} t + B \sin \sqrt{\frac{k}{m}} t \end{cases}\\$
+integrate  $L_t g = \delta ( t- t_p)$ to get discontinuity condition $t_p$ and another condition $g(t_p -\epsilon =; t_p ) = g(t_p + \epsilon; t_p) as \epsilon \rightarrow 0\\$
+which allows us to solve for $A, B\\
+\implies y(t) = \int_{- \infty}^t g(t; t_p) f(t_p) dt_p\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{greens function, boundary cond}\\
+$L_x y(x) = q(x);\,\, y(0) = 0,\,\, y(L) = 0\\
+L_x g(x; x_p) = \delta(x- x_p);\,\, g(0; x_p) = 0,\,\, g(L; x_p) = 0\\
+y(x) = \int_0^L g(x; x_p) q(x_p) d x_p\\$
+easy to show this satisfies boundary condition\\
+and $L_x y(x) = \int_0^L \delta ( x-x_p) q(x_p) d x_p = q(x)\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{Example}\\
+$\frac{d^2 T}{dx^2} = - \frac{1(x)}{\kappa} T(0) = 0,\,\, T(L) = 0\\
+- \kappa \frac{d^2}{dex}^2 g(x; x_p) = \delta (x-x_p),\,\, g(0; x_p) = 0,\,\, g(L; x_p) = 0\\$
+solve for $x< x_p:\\
+\implies g''(x; x_p) = 0;\,\, g(0; x_p) = 0\\
+\implies g(x; x_p) = c x\\$
+solve for $x> x_p:\\
+g''(x; x_p) g(L; x_p) = 0\\
+ax + b = g(x; x_p) \\
+g(L; x_p) = a L + b = 0 \implies b= - a L\\
+\implies g(x; x_p) = a x - a L = a(x-L),\,\, x> x_p\\
+g''(x; x_p) must be \delta function \implies g' step g cts at x_p\\
+\implies - \kappa \int_{x_p - \epsilon}^{x_p + \epsilon} g''(x; x_p) dx = 1\\
+\implies g'( x_p + \epsilon; x_p) - g'(x_p - \epsilon; x_p) = - \frac{1}{\kappa}\\
+\implies a- c = - \frac{1}{\kappa}\\
+g(x_p + \epsilon; x_p) = g(x_p - \epsilon; x_p) \\
+\implies a( x_p- L) = c x_p, solve for a, c\\
+\implies a = - \frac{x_p}{L \kappa},\,\, c= \frac{-L + x_p}{L \kappa}\\
+g(x; x_p) = \begin{cases}  \frac{L- x_p}{L \kappa} x,\,\, x< x_p \\ - \frac{x_p}{L \kappa} ( x- L),\,\, x> x_p \end{cases}\\$
+
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{greens functions using eigenfunctions}\\
+$L_x$ hermitian w/ $\langle y_2 , L_x y_1 \rangle = \langle L_x y_2, y_1 \rangle\\
+\implies L_x$ has orthonormal eigenfunctions $e_i(x)$ s.t.\\
+$L_x e_i ( x) = \lambda_i e_i(x) w/ e_i( 0 ) = 0,\,\, e_i(L) = 0\\
+\langle e_i( x), e_j( x) \rangle = \delta_{ij},\,\, e_i( x)$ complete\\
+$\implies y(x) = \sum_i a_i e_i(x) = a_i e_i(x)\\$
+\underline{recall:} $L_x y(x) = q(x)\\
+\implies a_i \lambda_i \langle e_i, e_j \rangle = \langle q(x) , e_j( x) \rangle\\
+\implies a_j \lambda_j = \langle q(x), e_j(x) \rangle\\
+\implies a_j = \frac{ \langle q(x), e_j ( x) \rangle}{\lambda_j}\\
+\implies y(x) = \frac{ \langle q(x), e_i(x) \rangle}{\lambda_i} e_i(x)\\
+q(x) = \delta(x- x_p)\\
+\implies g(x; x_p) = \frac{ \langle \delta(x-x_p), e_i(x) \rangle}{\lambda_i} e_i(x) = \frac{e_i(x_p) e_i (x)}{\lambda_i}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{Example}\\
+$\frac{d^2 T}{dx^2} = - \frac{q(x)}{\kappa} \implies - \kappa e''(x) = \lambda e(x),\,\, e(0) = 0 \implies e(x) = C \sin ( \sqrt{\frac{\lambda}{\kappa}} x)\\
+e(L) = 0 \implies \lambda = n \pi\\
+e_n(x)$ are not normalized i.e. $\langle e_n, e_n \rangle \neq \delta_{ij}\\$
+after normalizing obtain\\
+$e_n(x) = \sqrt{ \frac{2}{L} } \sin ( \frac{n \pi x}{L})\\
+\implies g(x; x_p) = \frac{e_n(x_p) e_n (x)}{\lambda_n} = \sum_n \frac{2}{L} \frac{\sin \frac{n \pi x_p}{L} \sin \frac{n \pi x}{L}}{n \pi}\\$
+this is essentially a fourier series of the previous method and approaches the greens function as $n \rightarrow \infty$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$g(z,w) = \sum_n \frac{e_n(w,z) e_n^* (w_s, z_s)}{\lambda_n}$}\\
+$L g(w,z) = \delta(w-w_s) \delta(z-z_s)\\$
+find complete set of eigenfunctions\\
+$L e_n ( w,z) = \lambda_n e_n (w,z) \implies g(z,w) = \sum_n g_n e_n ( w,z)\\
+\implies L g(w,z) = \sum_n g_n L e_n(w,z) = \sum_n g_n \lambda_n e_n(w,z)\\
+=\delta (w-w_s) \delta(z-z_s)\\
+\implies \sum_n g_n\lambda_n \langle e_n, e_m \rangle = \langle \delta(w-w_s) \delta(z-z_s), e_m \rangle\\
+= e_m^* (w_s, z_s) = g_m \lambda_m\\
+\implies g_m( w_s, z_s) = \frac{e_m^* (w_s, z_s)}{\lambda_m}\\
+\implies g(z,w) = \sum_n \frac{e_n( w, z) e_n^* (w_s,z_s)}{\lambda_n}\\
+$
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+separable case $L = L_w + L_z,\,\, L_w w_n (w) = \lambda_n W_n(w),\,\, \langle W_n, W_m \rangle = \delta_{nm}\\$
+$L_z Z_n(z) = \mu_n Z_n (z);\,\, \langle Z_n, Z_m \rangle = \delta_{nm}\\
+\implies L( W_n (w) Z_n(z)) = ( L_w + L_z) ( W_n (w) Z_n(z))\\
+= \lambda_n W_n(w) Z_n(z) + \mu_n W_n (w) Z_n(z) = ( \lambda_n + \mu_n) W_n(w) Z_n(z)\\$
+choose $w_n$ or $Z_n$ and expand $g$ in it\\
+$\implies g(w,z) = \sum_n g_n(z) W_n(w)\\
+\implies (L_w + L_z) \sum_n g_n(z) W_n(w) = \sum_n( \lambda_n g_n W_n + W_n L_z g_n)\\
+= \delta(w-w_s) \delta(z-z_s)\\
+\implies \sum_n [ \lambda_n g_n \langle W_n, W_m \rangle + \langle W_n, W_m \rangle L_z g_n ] = \langle \delta (w-w_s), W_m \rangle \delta(z-z_s)$
+
+
+\section*{Electroweak theory (redo)}
+$L_i = \frac{1- \gamma_5}{2} \begin{pmatrix} \psi_{\nu_i} \\ \psi_i \end{pmatrix};\,\, R_i = \frac{1+ \gamma_5}{2} \psi_i,\,\, i = e, \mu, \tau\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\gamma^{\alpha} ( 1- \gamma_5) = 2 \frac{1 + \gamma_5}{2} \gamma^{\alpha} \frac{1- \gamma_5}{2}$}\\
+$\gamma^{\alpha} (1- \gamma_5) = \frac{1}{2} \gamma_5 \gamma^{\alpha} (1- \gamma_5) - \frac{1}{2} \gamma_5 \gamma^{\alpha} ( 1- \gamma_5)+ \frac{1}{2} \gamma^{\alpha} ( 1- \gamma_5) + \frac{1}{2} \gamma^{\alpha} ( 1- \gamma_5)\\
+=\frac{1}{2} ( 1+ \gamma_5) \gamma^{\alpha} ( 1- \gamma_5 ) + \frac{1}{2} ( 1- \gamma_5) \gamma^{\alpha} ( 1- \gamma_5)\\$
+but $(1- \gamma_5) \gamma^{\alpha} ( 1- \gamma_5 ) = ( 1- \gamma_5 ) ( \gamma^{\alpha} + \gamma_5 \gamma^{\alpha})\\
+= \gamma^{\alpha} + \gamma_5 \gamma^{\alpha} - \gamma_6 \gamma^{\alpha} - \gamma_5^2 \gamma^{\alpha} = \gamma^{\alpha} - \gamma^{\alpha} = 0\\$
+here $\gamma_5 \gamma^{\alpha} = - \gamma^{\alpha} \gamma_5;\,\, \gamma_5^2 = 1$ was used\\
+$\therefore \gamma^{\alpha} ( 1- \gamma_5) = 2 ( \frac{1 + \gamma_5}{2}) \gamma^{\alpha} ( \frac{1- \gamma_5}{2})$
+
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$J^{(e) \alpha}_- = 2 \bar{L}_e \gamma^{\alpha} \hat{T}_- L_e$}\\
+$J_-^{(e) \alpha} = \bar{\psi}_e \gamma^{\alpha}(1- \gamma_5) \psi_{\nu_e} = 2 \bar{\psi}_e \frac{1+ \gamma_5}{2} \gamma^{\alpha} \frac{1- \gamma_5}{2} \psi_{\nu_e}\\$
+\underline{Note:} $(\bar{\psi}_e \,\, \bar{\psi}_{\nu_e} = ( \bar{\psi}_{\nu_e} \bar{\psi}_e ) \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} \psi_{\nu_e} \\ \psi_e \end{pmatrix}\\
+\implies J_-^{(e) \alpha} =2 ( \bar{\psi}_{\nu_e} \,\, \bar{\psi}_e) \frac{1+ \gamma_5}{2} \gamma^{\alpha} \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} \frac{1- \gamma_5}{2} \begin{pmatrix} \psi_{\nu_e} \\ \psi_e \end{pmatrix}\\
+=2 \bar{L}_e \gamma^{\alpha} \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} L_e = 2 \bar{L}_e \gamma^{\alpha} \hat{T}_- L_e\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $( \hat{P} u ) = ( \hat{P} u)^{\dagger} \gamma_0\\
+\implies \bar{L}_e = \bar{( \frac{1- \gamma_5}{2} \begin{pmatrix} \psi_{\nu_e} \\ \psi_e \end{pmatrix})} = ( \frac{1- \gamma_5}{2} \begin{pmatrix} \psi_{\nu_e} \\ \psi_e \end{pmatrix})^{\dagger} \gamma_0\\
+= ( \psi_{\nu_e} \,\, \psi_e ) ( \frac{1- \gamma_5}{2})\gamma_0 = ( \psi_{\nu e} \l\l \psi_e ) \gamma_0 \frac{1+ \gamma_5}{2} = ( \bar{\psi}_{\nu_e} \bar{\psi}_e ) \frac{1+ \gamma_5}{2}\\
+\hat{T}_{\pm} = \hat{T}_1 \pm i \hat{T}_2;\,\, \hat{\vec{T}} =( \hat{T}_1, \hat{T}_2, \hat{T}_3)\\
+\hat{T}_i = \frac{1}{2} \sigma_i;\,\, \sigma_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix},\,\, \sigma_2 = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix},\,\, \sigma_3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$L_{int}^{(e)} = g ( \bar{L}_e \gamma^{\alpha} \hat{\vec{T}} L_e ) \cdot \vec{A}_{\alpha} - g' [ \frac{1}{2} ( \bar{L}_e \gamma^{\alpha} L_e ) + (\bar{R}_e \gamma^{\alpha} R_e) ] B_{\alpha}$}\\
+from $J_-^{(e) \alpha},\,\, J^{(e) \alpha}_+,\,\, J^{(e) \alpha}_{EM}$ we see there are 2 types of current involved, i.e. isptriplets $\bar{L}_e \gamma^{\alpha} \hat{T}_i L_e$ and isosinglet $\frac{1}{2} ( \bar{L}_e \gamma^{\alpha} L_e) + ( \bar{R}_e \gamma^{\alpha} R_e ) $Analogous to EM where we take $J_{EM}^{\alpha} A_{\alpha} = \mathscr{L}_{int}\\$
+we can take a linear combination of couplets $g g_i ( \bar{L}_e \gamma^{\alpha} \hat{T}_i L_e) \cdot A_{i, \alpha} - g' [ \frac{1}{2} ( \bar{L}_e \gamma^{\alpha} L_e ) + ( \bar{R}_e \gamma^{\alpha} R_e)] B_{\alpha}\\$
+Let $g_i A_i \rightarrow A_i$ (can we do this?)\\
+(dont understand why we dont just $g \vec{A}_{\mu} \rightarrow \vec{A}_{\mu})\\
+\therefore L_{int}^{(e)} = g( \bar{L}_e \gamma^{\alpha} \hat{\vec{T}} L_e) \cdot \vec{A}_{\alpha} - g'[ \frac{1}{2}( \bar{L}_e \gamma^{\alpha} L_e) + ( \bar{R}_e \gamma^{\alpha} R_e)] B_{\alpha}$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$A_{\mu} = \cos \theta B_{\mu} + \sin \theta A_{\mu}^3$} $(A_{\mu} \sim$photon field (dont know how to derive/justify?)\\
+$A_{\mu}$ is not equal to $\vec{A}_{|mu}, B_{\mu}$ since it couples to $J_{EM}^{(e) \alpha}\\$
+\underline{recall:} $J_{EM}^{(e)\alpha} A_{\alpha} = ( g \bar{L}_e gamma^{\alpha} \hat{T}_3 L_e A_{\alpha}^3 - g' [ \frac{1}{2} ( \bar{L}_e \gamma^{\alpha} L_e) + ( \bar{R}_e \gamma^{\alpha} R_e)]B_{\alpha}$
+(don't know how to transform one into the other, it gets into Weinberg mixing angles but I dont know how to derive it)
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+photon field $(A_{\mu} )$ couples to $\bar{\psi} \gamma^{\alpha} \psi\\
+\implies A_{\mu} = \cos B_{\mu} + \sin \theta A_{\mu}^3,\\
+Z_{\mu} = - \sin \theta B_{\mu} + \cos \theta A_{\mu}^3 (Z_{\mu} is ortho to A_{\mu})\\$
+i.e. $Z_{\mu} A^{\mu} = 0$ (don't understand where $A_{|mu}, Z_{\mu}$ come from)\\
+Also $W_{\mu}^{(\pm)} = \frac{1}{\sqrt{2}} (A_{\mu}^1 \mp i A_{\mu}^2)\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\bar{L}_{int}^{(e)} \equiv \frac{g}{2 \sqrt{2}} ( J_-^{(e) \alpha} W_{\alpha}^{(-)} + J_+^{(e) \alpha} W_{\alpha}^{(+)} + J_0^{(e) \alpha} Z_{\alpha} ) - e J_{EM}^{(e) \alpha} A_{\alpha}$}\\
+\underline{recall:} $L_{int}^{(e)} = g( \bar{L}_e \gamma^{\alpha} \hat{\vec{T}} L_e) \cdot \vec{A}_{\alpha} - g' [ \frac{1}{2} ( \bar{L}_e \gamma^{\alpha} L_e ) + ( \bar{R}_e \gamma^{\alpha} R_e ) ] B_{\alpha}\\$
+insert $\vec{A}_{\alpha} , B_{\alpha}$ and\\
+\underline{Note:} $W_{mu}^{(\pm)} \implies A_{\mu}^1 = \frac{1}{\sqrt{2}} ( W_{\mu}^{(+)} + W_{\mu}^{(-)}); A_{\mu}^2 = \frac{i}{\sqrt{2}}( W_{\mu}^{(+)} - W_{\mu}^{(-)})\\
+\implies L_{int}^{(e)} = \frac{g}{\sqrt{2}} \bar{L}_e \gamma^{\alpha}( \hat{T}_- W_{\alpha}^{(-)} + \hat{T}_+ W_{\alpha}^{(+)}) L_e + [ g \cos \theta \bar{L}_e \gamma^{\alpha} \hat{T}_3 L_e + g'' \sin \theta( \frac{1}{2} \bar{L}_e \gamma^{\alpha} L_e + \bar{R}_e \gamma^{\alpha} R_e)] Z_{\alpha} + [ - g' \cos \theta ( \frac{1}{2} \bar{L}_e \gamma^{\alpha} L_e + \bar{R}_e \gamma^{\alpha} R_e ) + g \sin \theta \bar{L}_e \gamma^{\alpha} \hat{T}_3 L_e ] A_{\alpha}$ (mathematica)\\
+\underline{recall:} $J_{EM}^{(e) \alpha} = \bar{L}_e \gamma^{\alpha} ( \frac{1}{2} - \hat{T}_3) L_e + \bar{R}_e \gamma^{\alpha} R_e;\\
+J_-^{(e) \alpha} = 2 \bar{L}_e \gamma^{\alpha} \hat{T}_- L_e; J_+^{(e) \alpha} = 2 \bar{L}_e \gamma^{\alpha} \hat{T}_+ L_e\\
+\implies L_{int}^{(e)} = \frac{g}{2 \sqrt{2}} ( J_-^{(e) \alpha} W_{\alpha}^{(-)} + J_+^{(e) \alpha} W_{\alpha}^{(+)} + J_0^{(e) \alpha} Z_{\alpha} - e J_{EM}^{(e) \alpha} A_{\alpha}\\$
+this defines \\
+$J_0^{(e) \alpha} = 2 \sqrt{2} [ \cos \theta \bar{L}_e \gamma^{\alpha} \hat{T}_3 L_e + \frac{g'}{g} \sin \theta( \frac{1}{2} \bar{L}_e \gamma^{\alpha} L_e + \bar{R}_e \gamma^{\alpha} R_e)]\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$L= i \bar{\Psi} \gamma^{\mu} ( \partial_{\mu} - i g \vec{A}_{\mu} \cdot \hat{\vec{T}}) \Psi = i \bar{\Psi} \gamma^{\mu} \hat{D}_{\mu} \Psi$}\\
+start with ansats $i \bar{\Psi} \gamma^{\mu} \partial_{\mu} \Psi\\$
+forcing local symmetry, i.e. $\Psi \rightarrow U \Psi = e^{i \theta} e^{i g \hat{\vec{T}} \cdot \vec{\lambda}}\\
+e^{i \theta}$ is automatically satisfied\\
+$\implies \Psi \rightarrow e^{i g \hat{\vec{T}} \cdot \vec{\lambda}} \Psi;\,\, e^{i \theta(x)}$ symmetry automatifcally obeyed (dont understand)\\
+$\partial_{\mu} \rightarrow \partial_{\mu} - i g \vec{A}_{\mu} \cdot \hat{\vec{T}}$ (analogous to QED)\\
+$\therefore i \bar{\Psi} \gamma^{\mu} ( \partial_{\mu} - i \vec{A}_{\mu} \cdot \hat{\vec{T}}) \Psi = L\\$
+\underline{Note:} This implies $L = i \bar{\Psi} \gamma^{\mu} D_{\mu} \Psi = L' = i \bar{\Psi}' \gamma^{\mu} ( \partial_{\mu} - i \vec{A}_{\mu}' \cdot \hat{\vec{T}}) \Psi'\\$
+Next lets figure out how $\vec{A}_{\mu}$ transforms to make this true\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\vec{A}_{\mu}' \cdot \hat{\vec{T}} = \hat{U} \vec{A}_{\mu} \cdot \hat{\vec{T}} U^{-1} + \frac{i}{g} \hat{U} ( \partial_{\mu} \hat{U}^{-1})$}\\
+$L = i \bar{\Psi} \gamma^{\mu} \partial_{\mu} \Psi + g \bar{\Psi} \gamma^{\mu} \vec{A}_{\mu} \cdot \hat{\vec{T}} \Psi\\
+= i \bar{\Psi} U^{-1} U \gamma^{\mu} \partial_{\mu} U^{-1} U \Psi + g \bar{\Psi} U^{-1} U \gamma^{\mu} \vec{A}_{\mu} \cdot \hat{\vec{T}} U^{-1} U \Psi\\
+= i \bar{\Psi}' U \gamma^{\mu} \partial_{\mu}( U^{-1} \Psi') + g \bar{\Psi}' U \gamma^{\mu} \vec{A}_{\mu} \cdot \hat{\vec{T}} U^{-1} \Psi'\\
+= i \bar{\Psi}' U \gamma^{\mu} U^{-1} \partial_{\mu} \Psi' + i \bar{\Psi} ' U \gamma^{\mu}( \partial_{\mu} U^{-2} ) \Psi + g \bar{\Psi}' U \gamma^{\mu} \vec{A}_{\mu} \cdot \hat{\vec{T}} U^{-1} \Psi'\\
+= i \bar{\Psi}' \gamma^{\mu} \partial_{\mu} \Psi' + g \bar{\Psi}' \gamma^{\mu} U \vec{A}_{\mu} \cdot \hat{\vec{T}} U^{-1} + \frac{i}{g} U ( \partial_{\mu} U^{-1})] \Psi'\\
+= L' = i \bar{\Psi}' \gamma^{\mu} \partial_{\mu} \Psi' + g \bar{\Psi} \gamma^{\mu} \vec{A}_{\mu}' \cdot \hat{\vec{T}} \Psi'\\
+\therefore \vec{A}_{\mu}' \cdot \hat{\vec{T}} = U \vec{A}_{\mu} \cdot \hat{\vec{T}} U^{-1} + \frac{i}{g} U \partial_{\mu} ( U^{-1})$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\vec{F}_{\mu \nu} = \partial_{\mu} \vec{A}_{\nu} - \partial_{\nu} \vec{A}_{\mu} + \frac{2q}{\hbar c} ( \vec{A}_{\nu} \times \vec{A}_{\mu})$}(QCD)\\
+\underline{recall:} $[D_{\mu}, D_{\nu}] = \frac{iq}{\hbar c} \vec{\tau} \cdot \vec{F}_{\mu \nu}\\
+D_{\mu} = \partial_{\mu} + i \frac{q}{\hbar c} \vec{\tau} \cdot \vec{A}_{\mu} = \partial_{\mu} + i q \vec{\tau} \cdot \vec{A}_{\mu}\\
+{[D_{\mu}, D_{\nu}]} = [ \partial_{\mu} + i q \vec{\tau} \cdot \vec{A}_{\mu}, \partial_{\nu} + i q \vec{\tau} \cdot \vec{A}_{\nu}]\\
+=[\partial_{\mu}, \partial_{\nu}] + [ \partial_{\mu}, i q \vec{\tau} \cdot \vec{A}_{\nu}] + [ i q \vec{\tau} \cdot \vec{A}_{\mu}, \partial_{\nu}] + [i q \vec{\tau} \cdot \vec{A}_{\mu}, i q \vec{\tau} \cdot \vec{A}_{\nu}]\\
+= 0 + i \vec{\tau} \cdot [ \partial_{\mu}, \vec{A}_{\nu}] + i q \vec{\tau} \cdot [ \vec{A}_{\mu}, \partial_{\nu}] - q^2 [ \tau_i, \tau_j] A^i_{\mu} A^j_{\nu}\\
+=i q \vec{\tau} \cdot ( \partial_{\mu} \vec{A}_{\nu} - \partial_{\nu} \vec{A}_{\mu}) - q^2 [ \tau_i, \tau_j] A^i_{\mu} A^j_{\nu}\\$
+\underline{recall:} $[ \tau^i, \tau^j] = 2 i \epsilon_{ijk} \tau^k\\
+{[ \tau_i, \tau_j ]} A^i_{\mu} A^j_{\nu} =2 i \epsilon_{ijk} \tau^k A_{\mu}^i A_{\nu}^j = 2 i ( \vec{A}_{\mu} \times \vec{A}_{\nu})_k \tau^k\\
+= 2 i \vec{\tau} \cdot ( \vec{A}_{\mu} \times \vec{A}_{\nu})\\
+\therefore [D_{\mu}, D_{\nu} ] = \frac{i q}{\hbar c} \vec{\tau} \cdot ( \partial_{\mu} \vec{A}_{\nu} - \partial_{\nu} \vec{A}_{\mu} - \frac{2 q}{\hbar c} \vec{A}_{\mu} \times \vec{A}_{\nu})\\
+\therefore \vec{F}_{\mu \nu} = \partial_{\mu} \vec{A}_{\nu} - \partial_{\nu} \vec{A}_{\mu} - \frac{2 q}{\hbar c} \vec{A}_{\mu} \times \vec{A}_{|nu}\\$
+factor of $\frac{1}{\hbar c}$ comes from $q^2$ term
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\section*{QFT}
+\item \underline{$\hat{H} = \sum_{k=1}^N \hbar \omega_{\vec{k}} (\hat{a}_{\vec{k}}^{\dagger} \hat{a}_{\vec{k}} + \frac{1}{2})$}\\
+\underline{recall:} $\hat{H} = \sum_j \frac{\hat{p}_j^2}{2m} + \frac{1}{2} K ( \hat{x}_{j+1} - \hat{x}_j)^2\\$
+\underline{recall:} $\psi(x) = \int_{- \infty}^{\infty} e^{ik x} \phi (k) dk \rightarrow \sum e^{ik x} \tilde{\psi}\\$
+on a lattice $\psi \rightarrow x_j\\
+\implies \begin{cases} x_j -= \frac{1}{\sqrt{N}} \sum_k \tilde{x}_k e^{i k j a}\\ p_j = \frac{1}{\sqrt{N}} \sum_k \tilde{p}_k e^{ik ja} \end{cases}\\$
+(could understand this part better and i dont understand $\frac{1}{\sqrt{N}}
+\implies \begin{cases} \tilde{x}_k = \frac{1}{\sqrt{N}} \sum_j x_j e^{- i k j a}\\ \tilde{p}_k = \frac{1}{\sqrt{N}} \sum_j p_j e^{-i k ja} \end{cases}\\$
+force periodic boundary condition $e^{ik ja} = e^{i k(j+N)a} \implies k= \frac{2 \pi m}{Na }\\
+- \frac{N}{2} \leq m \leq \frac{N}{2}\\$
+\underline{Note:} $\sum_j e^{i k j a} = N \delta_{k0}\\
+\implies [x_j, p_{j'} ] = i \hbar \delta_{j j'}\\
+{[\tilde{x}_k, \tilde{p}_{k'} ]} = i \hbar \delta_{k, -k'}$ (verify)\\
+$\sum_j p_jT^2 = \sum_k \tilde{p}_k \tilde{p}_{-k}$ (verify)\\
+$\sum_j ( x_{j+1} - x_j)^2 = \sum_k \tilde{x}_k \tilde{x}_{-k} ( 4 \sin \frac{ka}{2}^2)$ (verify)\\
+and so \\
+$\hat{H} = \sum_j \frac{p_j^2}{2m} + \frac{1}{2} K (x_{j+1} - x_j)^2\\$
+becomes\\
+$\hat{H} = \sum_k \frac{1}{2m} \tilde{p}_k \tilde{p}_{-k} + \frac{1}{2} k \tilde{x}_k \tilde{x}_{-k} (4 \sin^2 \frac{ka}{2})\\$
+$k 4 \sin^2 \frac{ka}{2} = m \omega^2\\
+\implies \omega= \sqrt{ \frac{4 k \sin^2 \frac{ka}{2}}{m}}\\
+\implies \hat{H} = \sum_k \frac{1}{2m} ( \tilde{p}_k \tilde{p}_{-k} + \frac{1}{2} m \omega_k^2 \tilde{x}_k \tilde{x}_{-k})\\$
+( we require $p_k^{\dagger} = p_{-k} \hat{x}_k^{\dagger} = \hat{x}_{-k}$ (since $x_j p_j$ are hermiatian?)\\
+recall expressions for $a,\,\, a^{\dagger}$\\
+invert them and plug in for $x,p$\\
+$\implies \hat{H} = \sum_{k=1}^N \hbar \omega_k ( a_k^{\dagger} a_k + \frac{1}{2})\\
+\implies H= \int d^3 p E_p a_p^{\dagger} a,\,\,$ pretty sure $\frac{\hbar \omega}{2}$ term gets subtracted off because it diverges when we go to the oscillator picture\\
+\underline{Note:} $a_p = \frac{1}{2} ( \sqrt{2 \omega_p} \tilde{\phi} ( \vec{p}) + i \sqrt{ \frac{2}{\omega_p} }\tilde{\pi}(\vec{p}))\\
+a_{\vec{p}}^{\dagger} = \frac{1}{2}( \sqrt{2 \omega_{\vec{p}}} \tilde{\phi}( - \vec{p}) - i \sqrt{ \frac{2}{ \omega_p}} \tilde{\pi}(- \vec{p}))\\
+\phi( \vec{x}) = \int \frac{d^3 p}{(2 \pi)^3} \frac{1}{\sqrt{2 \omega_p}} e^{i \vec{p} \cdot \vec{x}} ( a_{\vec{p}} + a_{- \vec{p}}^{\dagger})$ (dont understand how to get here, should ask for help)\\
+$\pi(\vec{x}) = - i \int \frac{d^3 p}{(2 \pi)^3} \sqrt{ \frac{\omega}{\vec{p}}{2}}e^{\vec{p} \cdot \vec{x}} ( a _{\vec{p}} - a_{- \vec{p}}^{\dagger})\\$
+derive $L= \int d^3x [ \frac{1}{2} \rho$ bla bla see pg 56 in amateur\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+Schrodinger $\rightarrow$ Interaction\\
+Operator $O \rightarrow O_t^I = e^{i H_0 t} O e^{-i H_0 t}$ (interaction part gets absorbed into $| \psi \rangle\\$
+state $| \psi_t \rangle = e^{-i H t} | \psi \rangle \rightarrow | \psi^I_t \rangle = e^{i H_0 t} e^{-i H t} | \psi \rangle\\$
+\underline{Note:} $e^{i H_0 t - i Ht} \implies H_0 - H = H_{on t}\\
+t=0 \rightarrow t'\\
+\implies | \psi_{t'}^I \rangle = e^{i H_0 t} e^{-i H t'} | \psi \rangle\\
+\implies \psi_{t'}^I \rangle = e^{i H_0 t'} e^{- i H( t' - t)} e^{- i H_0 t} ( e^{i H_0 t} e^{-i H t})| \psi \rangle\\
+= U(t',t) (| \psi_t^I \rangle )\\$
+Let $\Delta = \frac{t'-t}{2}\\
+U(t',t) = U(t', t'-\Delta) U(t - \Delta,t'- 2 \Delta) \cdots U(t+ \Delta, t)\\
+\implies U(t+ \Delta, t) = e^{i H_0 (t+\Delta)} e^{- i H \Delta} e^{- i H_0t} = e^{i H_0 t} e^{- H_{int} \Delta} e^{-i H_0 t}\\
+= e^{- i H_{int} (t) \Delta}$ (time evolved)\\
+\underline{Note:} $e^A e^B \neq e^{A + B}$ you must use Baker - campbell hausdorff formula\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$U(t', t) = T \exp ( - i \int_t^{t'} d \tau H_{int}^I( \tau)),\,\, n \rightarrow \infty$}\\
+$U(t + \Delta, t) = e^{-i H_{int}^I (t) \Delta} \implies U(t', t'- \Delta) = e^{-i H_{int}^I (t' - \Delta) \Delta}\\
+\implies U(t', t) = e^{- i H_{int}' ( t- \Delta) \Delta} \cdot e^{- i H_{int}^I (t' - 2 \Delta) \Delta} \cdots e^{- i H_{int}^I(t) \Delta}\\
+= T e^{- i H_{int}^I(t' - \Delta) \Delta} e^{- i H_{int}^I (t'- 2 \Delta) \Delta} \cdots e^{- i H_{int}^I \Delta}\\
+= T e^{- i H_{int}^I (t' - \Delta) \Delta- i H_{int}^I( t' - 2 \Delta) \Delta + \cdots - i H_{int}^I(t) \Delta}\\
+= T \exp (- i \int_t^{t'} d \tau H_{int}^I(\tau)) n \rightarrow \infty\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $T \phi (t_1) \phi (t_2) = \begin{cases} \phi(t_1) \phi(t_2) t_1 \geq t_2\\
+\phi(t_2) \phi(t_1) t_2 >t_1 \end{cases}$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$H_{int}^I(t) = \int d^3 x \frac{\lambda}{4!} ( \phi^I(x))^4$}\\
+we've already discussed $V(\phi) = \frac{m^2}{2} \phi^2\\$
+now consider next term which is symmetric under $\phi \rightarrow - \phi;\,\, \mathcal{H}_{int} = - \mathcal{L}_{int} = \frac{\lambda}{4!} \phi^4\\
+H_{int}^I(t) = e^{i H_0 t} \int d^3 x ( \frac{\lambda}{4!} ( \phi(\vec{x}))^4) e^{- i H_0 t}\\
+= \int d^3 x \frac{\lambda}{4!} e^{i H_0 t} \phi e^{- i H_0 t} e^{H_0 t} \cdots \phi e^{- i H_0 t}\\
+= \int d^3 x \frac{\lambda}{4 !} ( \phi^I (x))^4$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$H^I$ includes terms like $a^{\dagger}_{\vec{p}'_1} a^{\dagger}_{\vec{p}'_2} a_{\vec{p}_1} a_{\vec{p}_2}\\$
+so 2-2 scattering is expected at leading order
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$S= \lim_{(t',t) \rightarrow ( \infty,-\infty)} = T \exp ( - i \int_{- \infty}^{\infty} dt H_{int}^I (t))\\
+= T \exp ( i \int d^4 x \mathcal{L}_{int}^I (x))\\
+S_{fi} = \langle p_1' p_2' |T \exp ( i \int d^4 x \mathcal{L}_{int}^I) | p_1 p_2 \rangle\\$
+(matrix elements)\\
+( I don't understand motivation for this?)
+
+
+\section*{Thermodynamics}
+
+
+\item \underline{$\int_0^{\epsilon_F} a(\epsilon) d \epsilon = N$} (Fermions)\\
+$N= 2 \sum_{\vec{k}} = 2 \frac{V}{(2 \pi)^3} \int d \vec{k} = \frac{2 \cdot 4 \pi V}{(2 \pi)^3} \int_0^{k_F} k^2 dk\\
+= \frac{2 \cdot 4 \pi V}{h^3} \int_0^{p_F} p^2 \frac{dp}{d \epsilon} d \epsilon\\
+a(\epsilon) = \frac{2 \cdot 4 \pi V}{h^3} p^2 \frac{d p}{d \epsilon}\\$
+in general\\
+$a(\epsilon) = \frac{g \cdot 4 \pi V}{h^3} p^2 \frac{dp}{d \epsilon} $
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$E_0 = \frac{4 \pi g V}{h^3} \int_0^{p_F} \frac{p^2}{2m} p^2 dp$} (fermion gas,\,\, ground state)\\
+$E_0 = 2 \sum_{\vec{k}} \epsilon(\vec{k}) = \frac{2 V}{(2 \pi)^3} \int \epsilon d \vec{k}\\
+= \frac{2 V}{(2 \pi)^3} 4 \pi \int \epsilon k^2 d k = \frac{2 V}{ h^3} 4 \pi \int \epsilon p^2 d p\\
+= \frac{2 V}{h^3} 4 \pi \int_0^{p_F} ( \frac{p^2}{2m}) p^2 dp\\
+= \int_0^{p_F} \epsilon a(\epsilon) d \epsilon\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\frac{\partial S}{\partial V}|_{T, N} = \frac{\partial P}{\partial T}|_{V, N}$} (a maxwell's relation)\\
+we want to find the maxwell relation involving $\frac{\partial S}{\partial V}|_{T, N}$\\
+we look for a thermo Identity that involes $S$ alone and $d V$\\
+\underline{recall:} $d F= - S d T - P d V + \mu d N\\
+\implies \frac{\partial F}{\partial T}|_{V, N} = - S,\,\, \frac{\partial F}{\partial V}|_{T, N} = - P\\
+\implies \frac{\partial^2 F}{\partial V \partial T}|_N = - \frac{\partial S}{\partial V}|_{T, N} ;\,\, \frac{\partial^2 F}{\partial T \partial V}|_N = - \frac{\partial P}{\partial T}|_{V, N}\\
+\therefore \frac{\partial S}{\partial V}|_{T, N}= \frac{\partial P}{\partial T}_{V, N}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$f(\vec{p}) = \frac{n}{(2 \pi m k_B T)^{3/2}} \exp (- p^2/2 m k_B T)$}\\
+\underline{Note:} $f= P N,\,\, \mathcal{P} \sim$ probability\\
+$\mathcal{P} = \frac{1}{Z} \exp(- p^2/2 m k_B T)\\
+Z= V \int d^3 p \exp (- p^2/2 m k_B T) = V 4 \pi \int_0^{\infty} p^2 d p \exp (- p^2/2 m k_B T)\\
+= 4 \pi V \sqrt{\frac{\pi}{2}} ( m k_B T)^{3/2} = V( 2 \pi m k_B T)^{3/2}\\
+\implies \mathcal{P}= \frac{n}{(2 \pi m k_B T)^{3/2}} \exp(- p^2/2 m k_B T)\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$S(E,N) = - N k_B [ ( \frac{E}{N \epsilon}) \ln ( \frac{E}{N \epsilon}) + ( 1- \frac{E}{N \epsilon}) \ln ( 1- \frac{E}{N \epsilon})$}\\
+( two state system w/ $E=0, \epsilon$)\\
+$\Omega ( E, N) = \frac{N!}{N_1 ! (N- N_1)!}$ (number of ways to choose $N_1$ impurities to be excited)\\
+$\implies \ln \Omega = \ln N! - \ln N! - \ln(N-N_1)!\\$
+\underline{recall:} $\ln N! = N \ln N - N\\
+\implies \ln \Omega = N \ln N - N - N_1 \ln N_1 + N_1 - ( N- N_1) \ln (N- N_1) + N - N_1\\
+= N \ln N - N_1 \ln N_1 - (N- N_1) \ln (N- N_1)\\
+= N \ln N - N_1 \ln N_1 - ( N- N_1) \ln (N- N_1) + ( N- N_1) \ln N - (N-N_1) \ln N\\
+= N \ln N - N_1 \ln N_1 - ( N- N_1) \ln \frac{N - N_1}{N} - (N - N_1) \ln N\\
+= - N_1 \ln N_1 + N_1 \ln N - (N- N_1) \ln \frac{N- N_1}{N}\\
+=- N_1 \ln \frac{N_1}{N} - (N - N_1) \ln \frac{N- N_1}{N}\\
+= - N ( \frac{N_1}{N} \ln \frac{N_1}{N} +  \frac{(N- N_1)}{N} \ln \frac{N-N_1}{N})\\
+\implies S \approx - N k_B ( \frac{N_1}{N} \ln \frac{N_1}{N} + \frac{(N-N_1)}{N} \ln \frac{N-N_1}{N})\\
+= - N k_B ( \frac{E}{N \epsilon} \ln ( \frac{E}{N \epsilon}) + \frac{(N- \frac{E}{\epsilon})}{N} \ln \frac{N - \frac{E}{\epsilon}}{N})\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$E(T) = \frac{N \epsilon}{( \exp ( \frac{\epsilon}{k_B T}) + 1)}$}\\
+\underline{recall:} $S(E,N) = - N k_B[ ( \frac{E}{N \epsilon}) \ln ( \frac{E}{N \epsilon}) + ( 1- \frac{E}{N \epsilon}) \ln ( 1- \frac{E}{N \epsilon})\\
+d E = T dS - P d V + \mu d N\\
+\implies \frac{\partial S}{\partial E}|_{V, N} = \frac{1}{T}\\
+\implies k_B N \{ \frac{1}{N \epsilon} \ln ( \frac{E}{\epsilon N}) - \frac{1}{N \epsilon} \ln ( 1- \frac{E}{ \epsilon N}) \} = \frac{\partial S}{\partial E} = \frac{1}{T}\\$
+(Mathematica)\\
+now solve for $E\\
+\implies E(T) = \frac{N \epsilon}{1+ \exp(\epsilon \beta)}\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $C_V = \frac{\partial E}{\partial T}|_V$ but $E (T)$ (above does not depend on volume so $\frac{\partial E}{\partial T} = \frac{d E}{d T} = C\\$
+\underline{Note:} $E(T) \rightarrow \frac{N \epsilon}{2}$ as $T \rightarrow \infty$ If we started with $\frac{N}{2} + 1$ excited atoms this would give negative temperature\\
+we can see this from\\
+$\frac{1}{T} = - \frac{k_B}{\epsilon} \ln ( \frac{E}{N \epsilon - E})$ is $\frac{E}{n \epsilon - E} > 1\\
+\implies E> N \epsilon - E, E> \frac{N \epsilon}{2}\\
+\implies E> \frac{N \epsilon}{2} \implies$ negative temperature.\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$\mathcal{P}(n_1) =  \frac{ \Omega (E- n_1 \epsilon, N-1)}{\Omega(E, N)}$ (Probability of exciting an impurity)\\
+
+
+\section*{Electrodynamics}
+
+
+\item \underline{$\frac{1}{|\vec{x} - \vec{x}'|} = \sum_{\ell=0}^{\infty} \frac{r_{<}^{\ell}}{r_{>}^{\ell+1}} P_{\ell} (\cos \gamma)$}\\
+$r_<$ is the smaller of $| \vec{x}|$ and $| \vec{x}'|$\\
+while $r_>$ is the larger of $| \vec{x}|$ and $| \vec{x}'|$\\
+\underline{recall:} $\frac{1}{| \vec{x} - \vec{x}'|} = \frac{1}{ \sqrt{ x^2 + x'^2 - 2 x x' \cos \gamma}} = \sum_{\ell=0}^{\infty} \frac{(x')^{\ell}}{x^{\ell+1}} P_{\ell} ( \cos \gamma)$\\
+if $x>>x'$ but the middle expression is $x, x'$\\
+symmetric so\\
+$\frac{1}{| \vec{x} - \vec{x}'|} = \sum_{\ell = 0}^{\infty} \frac{x^{\ell}}{x'^{\ell+1}} P_{\ell} ( \cos \gamma)$ if $x< x'\\
+\therefore \frac{1}{ | \vec{x} - \vec{x}'|} = \sum_{\ell=0}^{\infty} \frac{r_<^{\ell}}{r_>^{\ell+1}} P_{\ell} ( \cos \gamma)$\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\frac{1}{| \vec{x} - \vec{x}'|} = 4 \pi \sum_{\ell = 0}^{\infty} \sum_{m= - \ell}^{\ell} \frac{1}{2 \ell+1} \frac{r_<^{\ell}}{r_>^{\ell+1}} Y_{\ell m}^* ( \theta', \phi') Y_{\ell m} ( \theta, \phi)$}\\
+\underline{recall:} $P_{\ell}( \cos \gamma) = \frac{4 \phi}{2 \ell + 1} \sum_{m=- \ell}^{\ell} Y_{\ell m}^* ( \theta', \phi') Y_{\ell m} (\theta, \phi)$\\
+(Addition theorem for spherical harmonics)\\
+$\frac{1}{|\vec{x}-\vec{x}'|} = \sum_{\ell=0}^{\infty} \frac{r_<^{\ell}}{r_>^{\ell+1}} P_{\ell} ( \cos \gamma)\\
+= \sum_{\ell=0}^{\infty} \frac{r_<^{\ell}}{r_>^{\ell+1}} \frac{4 \pi}{2 \ell +1} \sum_{m=- \ell}^{\ell} Y_{\ell m}^* ( \theta', \phi') Y_{\ell m}( \theta, \phi)\\
+= 4 \pi \sum_{\ell=0}^{\infty} \sum_{m=-\ell}^{\ell} \frac{1}{2 \ell + 1} Y_{\ell m}^* ( \theta', \phi') Y_{\ell m}(\theta, \phi) \frac{r_<^{\ell}}{r_>^{\ell+1}}$\\
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\underline{Note:} $\gamma$ is the angle between $\vec{x}$ and $\vec{x}'$ which does not necessarily need to be $\theta$\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$P_{\ell} ( \cos \gamma) = \frac{4 \pi}{2 \ell + 1} \sum_{m= - \ell}^{\ell} Y_{\ell m}^* ( \theta',\phi') Y_{\ell m}(\theta, \phi)$}\\
+\underline{recall:} $Y_{\ell m} ( \theta, \phi)$ are complete;\\
+$\implies g( \theta, \phi) = \sum_{\ell = 0}^{\infty} \sum_{m= - \ell}^{\ell} A_{\ell m} Y_{\ell m}( \theta, \phi);\\
+A_{\ell m} = \int d \Omega Y_{\ell m}^* ( \theta, \phi) g( \theta, \phi);\,\, \cos \gamma = \cos \theta \cos \theta' + \sin \theta \sin \theta' \cos ( \phi - \phi')\\
+\implies P_{\ell}( \cos \gamma) = \sum_{\ell' = 0}^{\infty} \sum_{m = - \ell'}^{\ell'} A_{\ell m} Y_{\ell' m} ( \theta, \phi)\\$
+\underline{claim:} only $\ell' = \ell$ term appears\\
+\underline{proof:}\\
+\underline{recall:} the PDE for spherical harmonics is \\
+$\nabla^2 Y_{\ell m} ( \theta, \phi) + \frac{\ell ( \ell + 1)}{r^2} Y_{\ell m}( \theta, \phi) = 0$\\
+fix $\vec{x}' on the z axis \implies \gamma \rightarrow \theta\\$
+$\implies \nabla'^2 P_{\ell} ( \cos \gamma) + \frac{\ell ( \ell + 1)}{r^2} P_{\ell} ( \cos \gamma) = 0\\
+\nabla'^2 = \nabla^2,\,\,$ since $\nabla \cdot \nabla f = \nabla' \cdot \nabla ' f,\,\,$ i.e. scalar products are invariant under rotation so we can rotate it so that $\vec{x}'$ doesnt have to be on the z- axis\\
+$\implies \nabla^2 P_{\ell} ( \cos \gamma + \frac{\ell ( \ell + 1)}{r^2} P_{\ell} ( \cos \gamma) = 0\\
+\implies P_{\ell}$ is a spherical harmonic of order $\ell\\
+\implies P_{\ell} ( \cos \gamma) = \sum_{m = - \ell}^{\ell} A_m ( \theta', \phi') Y_{\ell m}( \theta, \phi)\\
+\int P_{\ell} ( \cos \gamma) Y_{\ell' m'}^* ( \theta, \phi) d \Omega = \sum_{m= - \ell}^{\ell} A_m( \theta', \phi') \int Y_{\ell m} ( \theta, \phi) Y_{\ell' m'} ( \theta, \phi) d \Omega\\
+\implies \sum_{m=- \ell}^{\ell} \delta_{\ell \ell'} \delta_{m m'} A_m = \delta_{\ell \ell'} A_m = \int P_{\ell} ( \cos \gamma) Y_{\ell m'}^* ( \theta, \phi) d \Omega\\
+\ell = \ell' \implies A_m = \int P_{\ell} ( \cos \gamma) Y_{\ell' m'}^* (\theta, \phi) d \Omega\\$
+this gives a vague way to also see that above claim is true.
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\nabla^2 \phi_m = \rho_m;\,\, \Phi_M( \vec{x}) = - \frac{1}{4 \pi} \int \frac{\nabla' \cdot \vec{M}( \vec{x}')}{| \vec{x} - \vec{x}'} d^3 x'$}\\
+\underline{recall:} $\vec{H} = - \nabla \phi_m\\$
+\underline{recall:} $\nabla \cdot \vec{B} = 0 = \mu_0 \nabla \cdot ( \vec{H} + \vec{M}) = 0\\
+\implies \nabla \cdot \vec{H} = - \nabla \cdot \vec{M} \implies \nabla^2 \phi_M = - \nabla \cdot \vec{M}\\
+\rho_M = - \nabla \cdot \vec{M}\\
+\implies \phi_m = - \frac{1}{4 \pi} \int \frac{ \nabla' \cdot \vec{M} ( \vec{x} ')}{ | \vec{x} - \vec{x}'|} d^3 x'$ (no boundary surfaces)\\
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\Phi_M = - \frac{1}{4 \pi} \int_V \frac{\nabla' \cdot \vec{M} ( \vec{x}')}{| \vec{x} - \vec{x}'|} d^3 x'\\
++ \frac{1}{4 \pi} \oint_S \frac{ \hat{n} ' \cdot \vec{M} ( \vec{x}')}{| \vec{x} - \vec{x}' |} da '$}\\
+\underline{recall:} $\sigma_M = \hat{n} \cdot \vec{M};\,\, \rho_M = - \nabla \cdot \vec{M}\\
+\Phi_m = \frac{1}{4 \pi} \oint \frac{\rho_M}{| \vec{x} - \vec{x}' |} d^3 x' + \frac{1}{4 \pi} \oint \frac{\sigma_M}{| \vec{x} - \vec{x}'|} d a '\\
+= - \frac{1}{4 \pi} \int_V \frac{\nabla' \cdot \vec{M} ( \vec{x}')}{| \vec{x} - \vec{x}' |} d^3 x' + \frac{1}{4 \pi} \oint_S \frac{\hat{n}' \cdot \vec{M}( \vec{x}')}{| \vec{x} - \vec{x}'|} da'\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+$\vec{F} = \int \vec{J} ( \vec{x} \times \vec{B}( \vec{x}) d^3;\,\, \vec{N} = \vec{x} \times ( \vec{J} \times \vec{B}) d^3 x$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\vec{F} = \nabla ( \vec{m} \cdot \vec{B}) - m ( \nabla \cdot \vec{B})$}\\
+\underline{recall:} $( \vec{J} \times \vec{B})_i = \epsilon_{ijk} J_j B_k;\,\, \vec{F} = \int \vec{J} ( \vec{x}) \times \vec{B} ( \vec{x}) d^3 x\\
+B_k( \vec{x}) = B_k ( 0) + \vec{x} \cdot \nabla B_k(0) + \cdots\\
+F_i = \int \epsilon_{ijk} J_j B_k d^3 x\\
+= \sum_{jk} \epsilon_{ijk} \int J_j B_k d^3 x\\
+= \sum_{jk} \epsilon_{ijk} [ \int J_j ( B_k ( 0 ) + \vec{x} \cdot \nabla B_k (0) + \cdots) d^3 x']\\
+= \sum_{jk} \epsilon_{ijk} [ B_k ( 0) \int J_j ( \vec{x}') d^3 x' + \int J_j ( \vec{x}') \vec{x}' \cdot \nabla B_k(0) d^3 x'\\
+\int J_j(\vec{x}') d^3 x' = 0$ ( steady current)\\
+$F_i \approx \sum_{jk} \epsilon_{ijk} \int J_j(\vec{x}') \vec{x}' \cdot \nabla B_k ( 0) d^3 x'\\
+= \int \vec{x} \cdot [ \vec{J} \times \nabla B_k(0)] d^3 x'\\
+= - \int \vec{x} \cdot [ \nabla B_k(0) \times \vec{J} ] d^3 x'\\
+= - \int \nabla B_k (0) \cdot[ \vec{J} \times \vec{x}] d^3 x'\\
+= - 2 \int \nabla B_k (0) \cdot \vec{m} d^3 x'\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\vec{A}( \vec{x} ) = \frac{\mu_0}{4 \pi} \int \vec{J} ( \vec{x}') \frac{e^{i k | \vec{x} - \vec{x}'|}}{| \vec{x} - \vec{x}'|} d^3 x'$}\\
+\underline{recall:} $\vec{J} ( \vec{x}, t) = \vec{J}( \vec{x}) e^{- i \omega t}\\$
+\underline{recall:} $\vec{A} ( \vec{x}, t) = \frac{\mu_0}{4 \pi} \int d^3 x' \int d t' \frac{\vec{J} ( \vec{x}', t')}{| \vec{x} - \vec{x}'|} \delta(t' + \frac{|\vec{x} - \vec{x}'|}{c} - t)\\
+= \frac{\mu_0}{4 \pi} [ \int d^3 x' \frac{\vec{J}( \vec{x}')}{| \vec{x} - \vec{x}'|} e^{i k| \vec{x} - \vec{x}'|}] e^{- i \omega t}\\
+= \vec{A} ( \vec{x} e^{- i \omega t}\\
+\therefore \vec{A}( \vec{x} = \frac{\mu_0}{4 \pi} \int d^3 x' \frac{\vec{J} ( \vec{x}' ) e^{i k | \vec{x} - \vec{x}'|}}{| \vec{x} - \vec{x}'|} d^3 x'\\$
+
+
+\hdashrule[0.5ex][c]{\linewidth}{0.5pt}{1.5mm}
+
+
+\item \underline{$\lim_{kr \rightarrow 0} \vec{A} ( \vec{x}) = \frac{\mu_0}{4 \pi} \sum_{\ell, m} \frac{4 \pi}{2 \ell + 1} \frac{Y_{\ell m} ( \theta, \phi)}{r^{\ell + 1}} \int \vec{J} ( \vec{x}') r'^{\ell} Y_{\ell m}^* ( \theta', \phi') d^3 x'$} (near field)\\
+\underline{recall:} $\vec{A} ( \vec{x}) = \frac{\mu_)}{4 \pi} \int \vec{J} ( \vec{x}') \frac{e^{i k | \vec{x} - \vec{x}'|}}{ | \vec{x} - \vec{x}'|} d^3 x';\\
+\frac{1}{| \vec{x} - \vec{x}'|} = 4 \pi \sum_{\ell = 0}^{\infty} \sum_{m= - \ell}^{\ell} \frac{1}{2 \ell + 1} \frac{r_<^{\ell}}{r_>"^{\ell+1}} Y_{\ell m}^*(\theta', \phi') Y_{\ell m} ( \theta, \phi)\\
+\implies \vec{A} ( \vec{x}) = \frac{\mu_0}{4 \pi} \int \vec{J} ( \vec{x}') e^{i k | \vec{x} - \vec{x}'|} (4 \pi \sum_{\ell = 0}^{\infty} \sum_{m= - \ell}^{\ell} \frac{1}{2 \ell + 1} \frac{r_<^{\ell}}{r_>^{\ell+1}} Y_{\ell m}^* ( \theta', \phi') Y_{\ell m} ( \theta, \phi)) d^3 x'\\$
+\underline{recall:} $| \vec{x} - \vec{x}' | \approx r - \hat{n} \cdot \vec{x}'\\
+\implies \lim_{kr \rightarrow 0} \vec{A} ( \vec{x}) = \lim_{kr \rightarrow 0} \frac{\mu_0}{4 \pi} \int \vec{J} ( \vec{x}') e^{ik r} e^{- i k \hat{n} \cdot \vec{x}'}(4 \pi \sum_{\ell = 0}^{\infty} \sum_{m= - \ell}^{\ell} \frac{1}{2 \ell + 1} \frac{r_<^{\ell}}{r_>^{\ell + 1}} Y_{\ell m}^* ( \theta', \phi' ) Y_{\ell m} ( \theta, \phi)) d^3 x', k r \rightarrow 0 \implies r< r'\\
+= \frac{\mu_0}{4 \pi} \sum_{\ell, m} \frac{4 \pi}{2 \ell + 1} Y_{\ell m}( \theta, \phi)\\$
+don't understand this step we might have to take a detour through Griffiths.
+
+
+\end{enumerate}
+
+\end{document}
